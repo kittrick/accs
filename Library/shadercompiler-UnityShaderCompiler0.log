@@ -294,3 +294,13 @@ Cmd: preprocessCompute
   insize=499 outsize=500 ok=1
 Cmd: translateComputeKernel
   api=14 insize=924 outsize=961 ok=1
+Cmd: preprocessCompute
+  insize=500 outsize=501 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=501 outsize=924 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=632 outsize=516 ok=1
+Cmd: preprocessCompute
+  insize=523 outsize=524 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=924 outsize=961 ok=1

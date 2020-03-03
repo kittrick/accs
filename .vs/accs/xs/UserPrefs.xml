@@ -1,20 +1,12 @@
 ﻿<Properties StartupConfiguration="{9B99FF80-FC44-4D4E-0CF1-FDC7C89E0DBD}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shaders/CCACompute.compute">
     <Files>
-      <File FileName="Assets/Scripts/CCA2D.cs" Line="96" Column="24" />
-      <File FileName="Assets/Shaders/CCACompute.compute" Line="29" Column="1" />
+      <File FileName="Assets/Shaders/CCACompute.compute" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="accs" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4f1a7d67-a88d-4498-b875-1373ccd307ab" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e1dbbbaf-c663-414d-9817-b17ccd21abd2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
