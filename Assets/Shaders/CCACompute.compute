@@ -1,5 +1,5 @@
-﻿#pragma kernel ResetKernel;
-#pragma kernel StepKernel;
+﻿#pragma kernel ResetKernel
+#pragma kernel StepKernel
 
 Texture2D<float> readTex;
 SamplerState sampler_readTex;
