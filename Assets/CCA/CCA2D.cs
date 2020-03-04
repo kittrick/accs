@@ -1,4 +1,5 @@
-﻿using EasyButtons;
+﻿using System;
+using EasyButtons;
 using UnityEngine;
 
 public class CCA2D : MonoBehaviour
@@ -45,10 +46,12 @@ public class CCA2D : MonoBehaviour
     
     // Kit Code
     private Camera cam;
+    private int fixedUpdateCount = 0;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if(Time.frameCount % stepMod == 0)
+        fixedUpdateCount++;
+        if(fixedUpdateCount % stepMod == 0)
         {
             for (int i = 0; i < stepsPerFrame; i++)
             {
@@ -115,7 +118,7 @@ public class CCA2D : MonoBehaviour
             (int) Mathf.Abs(Input.mousePosition.y  * rez / cam.pixelHeight) % rez
         });
         
-        cs.Dispatch(stepKernel, rez, rez, 1);
+        cs.Dispatch(stepKernel, rez, Mathf.FloorToInt(rez / 8), 1);
 
         SwapTex();
 
