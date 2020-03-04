@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{9B99FF80-FC44-4D4E-0CF1-FDC7C89E0DBD}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shaders/CCACompute.compute">
     <Files>
-      <File FileName="Assets/Shaders/CCACompute.compute" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CCA2D.cs" Line="89" Column="29" />
+      <File FileName="Assets/Shaders/CCACompute.compute" Line="32" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e1dbbbaf-c663-414d-9817-b17ccd21abd2" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2b7dd601-95cc-4244-99dd-2efc6560fb9d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

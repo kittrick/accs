@@ -1,37 +1,133 @@
 Base path: '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileSnippet
-  api=14 type=0 insize=6897 outsize=6522 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE _NORMALMAP _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=6897 outsize=235 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=6897 outsize=6522 kw=UNITY_PASS_SHADOWCASTER _SURFACE_TYPE_TRANSPARENT _NORMALMAP_TANGENT_SPACE _BLENDMODE_ALPHA _BLENDMODE_PRESERVE_SPECULAR_LIGHTING _ENABLE_FOG_ON_TRANSPARENT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=7392 outsize=235 kw=_NORMALMAP_TANGENT_SPACE _NORMALMAP _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=7392 outsize=6522 kw=_NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=3240 outsize=1096 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=7868 outsize=8159 kw=LIGHTMAP_ON DIRLIGHTMAP_COMBINED DECALS_3RT _NORMALMAP_TANGENT_SPACE _NORMALMAP _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=7868 outsize=19916 kw=DECALS_3RT _NORMALMAP_TANGENT_SPACE _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=7868 outsize=18975 kw=DECALS_3RT _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=14 insize=406 outsize=773 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=773 outsize=806 ok=1
+  api=14 insize=924 outsize=961 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(27): syntax error: unexpected token ';'
-  api=14 insize=502 outsize=0 ok=0
+  error: 2 plat 14 at CCACompute.compute(19): 'frac': no matching 0 parameter intrinsic function; Possible intrinsic functions are: frac(float|half|min10float|min16float)
+  error: 2 plat 14 at CCACompute.compute(19): syntax error: unexpected token 'new'
+  api=14 insize=833 outsize=0 ok=0
 Cmd: compileComputeKernel
-  error: 2 plat 14 at (0): Did not find shader kernel 'StepKernel;' to compile
-  api=14 insize=503 outsize=0 ok=0
+  error: 1 plat 14 at CCACompute.compute(19): comma expression used where a vector constructor may have been intended
+  error: 2 plat 14 at CCACompute.compute(21): 'frac': no matching 0 parameter intrinsic function; Possible intrinsic functions are: frac(float|half|min10float|min16float)
+  error: 2 plat 14 at CCACompute.compute(22): syntax error: unexpected token '}'
+  api=14 insize=823 outsize=0 ok=0
 Cmd: compileComputeKernel
-  error: 2 plat 14 at (0): Did not find shader kernel 'ResetKernel;' to compile
-  api=14 insize=285 outsize=0 ok=0
+  error: 1 plat 14 at CCACompute.compute(21): implicit truncation of vector type
+  api=14 insize=831 outsize=924 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=979 outsize=961 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at (0): Did not find shader kernel 'StepKernel;' to compile
-  api=14 insize=502 outsize=0 ok=0
+  error: 1 plat 14 at CCACompute.compute(21): implicit truncation of vector type
+  api=14 insize=839 outsize=1443 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1443 outsize=1289 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=832 outsize=924 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1632 outsize=1608 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1476 outsize=1342 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2749 outsize=3824 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2749 outsize=3824 ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=8936 outsize=8379 kw=DECALS_3RT SHADOW_MEDIUM USE_CLUSTERED_LIGHTLIST DEBUG_DISPLAY _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1621 outsize=1443 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 1 plat 14 at CCACompute.compute(69): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1711 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1659 outsize=2893 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1653 outsize=1470 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1723 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1711 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3010 outsize=4148 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2889 outsize=3914 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1742 outsize=3054 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1678 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1648 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1722 outsize=3038 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3038 outsize=4185 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2889 outsize=3914 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1744 outsize=3050 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1678 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1737 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1732 outsize=3014 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1678 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1736 outsize=2781 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1649 outsize=1470 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1816 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1812 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1818 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2029 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1973 outsize=3358 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1678 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1959 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(71): undeclared identifier 'drawRange'
+  api=14 insize=1992 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=2009 outsize=3475 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1759 outsize=1568 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2018 outsize=1579 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2008 outsize=1579 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3030 outsize=4093 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1726 outsize=1516 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3058 outsize=4148 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1820 outsize=1579 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3030 outsize=4093 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1794 outsize=3058 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1726 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1835 outsize=3126 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1726 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1797 outsize=3159 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1759 outsize=1568 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3203 outsize=4502 ok=1

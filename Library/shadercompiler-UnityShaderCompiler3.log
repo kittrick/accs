@@ -1,31 +1,158 @@
 Base path: '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileSnippet
-  api=14 type=0 insize=6897 outsize=6522 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=6897 outsize=6522 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=6897 outsize=235 kw=UNITY_PASS_SHADOWCASTER _SURFACE_TYPE_TRANSPARENT _NORMALMAP_TANGENT_SPACE _BLENDMODE_ALPHA _BLENDMODE_PRESERVE_SPECULAR_LIGHTING _ENABLE_FOG_ON_TRANSPARENT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=7392 outsize=6522 kw=_NORMALMAP_TANGENT_SPACE _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=7392 outsize=235 kw=_NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=7868 outsize=20764 kw=LIGHTMAP_ON DIRLIGHTMAP_COMBINED DECALS_3RT _NORMALMAP_TANGENT_SPACE _NORMALMAP _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=7868 outsize=22817 kw=DECALS_3RT _NORMALMAP_TANGENT_SPACE _NORMALMAP _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=8936 outsize=8159 kw=_SURFACE_TYPE_TRANSPARENT DECALS_3RT SHADOW_MEDIUM USE_CLUSTERED_LIGHTLIST _NORMALMAP_TANGENT_SPACE _BLENDMODE_ALPHA _BLENDMODE_PRESERVE_SPECULAR_LIGHTING _ENABLE_FOG_ON_TRANSPARENT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: initializeCompiler
-Cmd: compileSnippet
-  api=14 type=1 insize=7392 outsize=235 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 Cmd: compileComputeKernel
-  api=14 insize=500 outsize=924 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=632 outsize=516 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=924 outsize=961 ok=1
+  error: 2 plat 14 at CCACompute.compute(21): 'frac': no matching 0 parameter intrinsic function; Possible intrinsic functions are: frac(float|half|min10float|min16float)
+  error: 2 plat 14 at CCACompute.compute(22): syntax error: unexpected token '}'
+  api=14 insize=829 outsize=0 ok=0
 Cmd: compileComputeKernel
-  api=14 insize=524 outsize=924 ok=1
+  error: 2 plat 14 at CCACompute.compute(19): 'frac': no matching 0 parameter intrinsic function; Possible intrinsic functions are: frac(float|half|min10float|min16float)
+  error: 2 plat 14 at CCACompute.compute(19): syntax error: unexpected token 'new'
+  api=14 insize=833 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(21): implicit truncation of vector type
+  api=14 insize=831 outsize=1443 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=632 outsize=516 ok=1
+  api=14 insize=1443 outsize=1289 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(21): implicit truncation of vector type
+  api=14 insize=839 outsize=924 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=979 outsize=961 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=979 outsize=961 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=979 outsize=961 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(56): 'SampleLevel': no matching 2 parameter intrinsic method; Possible intrinsic methods are: Texture2D<float>.SampleLevel(SamplerState, float2|half2|min10float2|min16float2, float1|half1|min10float1|min16float1) Texture2D<float>.SampleLevel(SamplerState, float2|half2|min10float2|min16float2, float1|half1|min10float1|min16float1, int2) Texture2D<float>.SampleLevel(SamplerState, float2|half2|min10float2|min16float2, float1|half1|min10float1|min16float1, int2, out uint status)
+  api=14 insize=1615 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1677 outsize=2749 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2749 outsize=3824 ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=3401 outsize=22793 kw=DEBUG_DISPLAY pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=7868 outsize=8379 kw=DECALS_3RT DEBUG_DISPLAY _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=8936 outsize=402698 kw=DECALS_3RT SHADOW_MEDIUM USE_CLUSTERED_LIGHTLIST DEBUG_DISPLAY _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1613 outsize=1443 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1614 outsize=1443 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1621 outsize=2801 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1561 outsize=1470 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1636 outsize=2893 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1712 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 1 plat 14 at CCACompute.compute(69): signed/unsigned mismatch, unsigned assumed
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1711 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1705 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1713 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1714 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1716 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1653 outsize=1470 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(69): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(74): unrecognized identifier 'writeTex'
+  api=14 insize=1712 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2982 outsize=4093 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1723 outsize=3010 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1728 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1724 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1732 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1744 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1737 outsize=3026 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1678 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1658 outsize=2889 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3026 outsize=4243 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1780 outsize=3010 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1780 outsize=3010 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3010 outsize=4148 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1560 outsize=1335 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1800 outsize=1531 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2029 outsize=3310 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1678 outsize=1516 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1973 outsize=1531 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3282 outsize=4719 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2155 outsize=3514 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1759 outsize=1568 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3511 outsize=5263 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(71): if statement conditional expressions must evaluate to a scalar
+  error: 2 plat 14 at CCACompute.compute(81): unrecognized identifier 'writeTex'
+  api=14 insize=2020 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2937 outsize=3914 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2008 outsize=3030 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1726 outsize=1516 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3058 outsize=4148 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3058 outsize=4148 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1843 outsize=1579 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1726 outsize=1516 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3058 outsize=4148 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1794 outsize=1579 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1818 outsize=3074 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1726 outsize=1516 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3126 outsize=4254 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1836 outsize=1579 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1797 outsize=1579 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3159 outsize=4380 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1759 outsize=1568 ok=1
