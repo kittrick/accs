@@ -46,12 +46,10 @@ public class CCA2D : MonoBehaviour
     
     // Kit Code
     private Camera cam;
-    private int fixedUpdateCount = 0;
 
-    private void FixedUpdate()
+    private void Update()
     {
-        fixedUpdateCount++;
-        if(fixedUpdateCount % stepMod == 0)
+        if(Time.frameCount % stepMod == 0)
         {
             for (int i = 0; i < stepsPerFrame; i++)
             {
@@ -103,8 +101,30 @@ public class CCA2D : MonoBehaviour
         cs.SetBool("moore", moore);
 
         cs.SetInt("rez", rez);
-        cs.Dispatch(k, rez, rez, 1);
+        cs.Dispatch(k, rez, rez / 8, 1);
         SwapTex();
+    }
+
+    [Button]
+    public void RandomizeParams()
+    {
+        var rand = new System.Random();
+        range = (int) (rand.NextDouble() * (MAX_RANGE - 1)) + 1;
+        threshold = (int) (rand.NextDouble() * (MAX_THRESHOLD - 1)) + 1;
+        nstates = (int) (rand.NextDouble() * (MAX_STATES - 2)) + 2;
+        moore = rand.NextDouble() <= 0.5f;
+        
+        cs.SetInt("range", range);
+        cs.SetInt("threshold", threshold);
+        cs.SetInt("nstates", nstates);
+        cs.SetBool("moore", moore);
+    }
+
+    [Button]
+    public void ResetAndRandomize()
+    {
+        RandomizeParams();
+        Reset();
     }
 
     [Button]
@@ -118,7 +138,7 @@ public class CCA2D : MonoBehaviour
             (int) Mathf.Abs(Input.mousePosition.y  * rez / cam.pixelHeight) % rez
         });
         
-        cs.Dispatch(stepKernel, rez, Mathf.FloorToInt(rez / 8), 1);
+        cs.Dispatch(stepKernel, rez, rez / 8, 1);
 
         SwapTex();
 
