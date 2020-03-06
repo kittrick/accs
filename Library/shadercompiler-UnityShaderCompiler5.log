@@ -1,11 +1,10 @@
 Base path: '/Applications/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/2019.3.3f1/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(45): undeclared identifier 'count'
-  api=14 insize=2581 outsize=0 ok=0
+  api=14 insize=3810 outsize=3607 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=3203 outsize=4425 ok=1
+  api=14 insize=1851 outsize=1568 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=3101 outsize=3863 ok=1
+  api=14 insize=3844 outsize=3597 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1759 outsize=1568 ok=1
+  api=14 insize=1881 outsize=1621 ok=1
