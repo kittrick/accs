@@ -37,3 +37,295 @@ Cmd: compileComputeKernel
   api=14 insize=4143 outsize=1671 ok=1
 Cmd: translateComputeKernel
   api=14 insize=3597 outsize=4952 ok=1
+Cmd: preprocessCompute
+  insize=4269 outsize=4272 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(155): syntax error: unexpected token ';'
+  error: 2 plat 14 at CCACompute.compute(156): syntax error: unexpected token '{'
+  error: 2 plat 14 at CCACompute.compute(164): syntax error: unexpected token 'if'
+  api=14 insize=4272 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4268 outsize=4271 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3929 outsize=5674 ok=1
+Cmd: preprocessCompute
+  insize=4449 outsize=4452 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4452 outsize=4301 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1881 outsize=1621 ok=1
+Cmd: preprocessCompute
+  insize=4449 outsize=4452 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4452 outsize=1671 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4301 outsize=6502 ok=1
+Cmd: preprocessCompute
+  insize=4192 outsize=4195 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4195 outsize=1671 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3665 outsize=5095 ok=1
+Cmd: preprocessCompute
+  insize=4268 outsize=4271 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4271 outsize=1671 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3929 outsize=5682 ok=1
+Cmd: preprocessCompute
+  insize=4277 outsize=4280 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(156): undeclared identifier 'flip'
+  api=14 insize=4280 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4277 outsize=4280 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(156): undeclared identifier 'flip'
+  api=14 insize=4280 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4174 outsize=4177 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4177 outsize=1671 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3597 outsize=4951 ok=1
+Cmd: preprocessCompute
+  insize=4212 outsize=4215 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(158): undeclared identifier 'deadcount'
+  api=14 insize=4215 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4229 outsize=4232 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4232 outsize=1719 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3645 outsize=4951 ok=1
+Cmd: preprocessCompute
+  insize=4233 outsize=4236 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4236 outsize=3653 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3653 outsize=4951 ok=1
+Cmd: preprocessCompute
+  insize=4317 outsize=4320 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3858 outsize=5343 ok=1
+Cmd: preprocessCompute
+  insize=4340 outsize=4343 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4343 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3858 outsize=5343 ok=1
+Cmd: preprocessCompute
+  insize=4395 outsize=4398 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4398 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3858 outsize=5343 ok=1
+Cmd: preprocessCompute
+  insize=4397 outsize=4400 ok=1
+Cmd: preprocessCompute
+  insize=4370 outsize=4373 ok=1
+Cmd: preprocessCompute
+  insize=4369 outsize=4372 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4372 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3947 outsize=5470 ok=1
+Cmd: preprocessCompute
+  insize=4371 outsize=4374 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4374 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3995 outsize=5553 ok=1
+Cmd: preprocessCompute
+  insize=4398 outsize=4401 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4401 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3983 outsize=5524 ok=1
+Cmd: preprocessCompute
+  insize=4374 outsize=4377 ok=1
+Cmd: preprocessCompute
+  insize=4473 outsize=4476 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
+  api=14 insize=4476 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4474 outsize=4477 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4477 outsize=1727 ok=1
+Cmd: preprocessCompute
+  insize=4475 outsize=4478 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4478 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1971 outsize=1732 ok=1
+Cmd: preprocessCompute
+  insize=4475 outsize=4478 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4478 outsize=1971 ok=1
+Cmd: preprocessCompute
+  insize=4490 outsize=4493 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(161): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(164): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(168): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(169): typed UAV stores must write all declared components.
+  api=14 insize=4493 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4504 outsize=4507 ok=1
+Cmd: preprocessCompute
+  insize=4310 outsize=4313 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(162): undeclared identifier 'memTex'
+  api=14 insize=4313 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4315 outsize=4318 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): undeclared identifier 'memTex'
+  api=14 insize=4318 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4324 outsize=4327 ok=1
+Cmd: preprocessCompute
+  insize=4363 outsize=4366 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4366 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4392 outsize=4395 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4395 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4394 outsize=4397 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4397 outsize=4146 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: preprocessCompute
+  insize=4394 outsize=4397 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4397 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4146 outsize=5693 ok=1
+Cmd: preprocessCompute
+  insize=4397 outsize=4400 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4400 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4182 outsize=5765 ok=1
+Cmd: preprocessCompute
+  insize=4449 outsize=4452 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): undeclared identifier 'xy'
+  api=14 insize=4452 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4452 outsize=4455 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): undeclared identifier 'xy'
+  api=14 insize=4455 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4448 outsize=4451 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4451 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4450 outsize=4453 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4446 outsize=6281 ok=1
+Cmd: preprocessCompute
+  insize=4450 outsize=4453 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4453 outsize=4446 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: preprocessCompute
+  insize=4456 outsize=4459 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4459 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4446 outsize=6285 ok=1
+Cmd: preprocessCompute
+  insize=4455 outsize=4458 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4458 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4446 outsize=6285 ok=1
+Cmd: preprocessCompute
+  insize=4482 outsize=4485 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4485 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4526 outsize=6443 ok=1
+Cmd: preprocessCompute
+  insize=4514 outsize=4517 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4517 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: preprocessCompute
+  insize=4518 outsize=4521 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4586 outsize=6622 ok=1
+Cmd: preprocessCompute
+  insize=4519 outsize=4522 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4522 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4586 outsize=6622 ok=1
+Cmd: preprocessCompute
+  insize=4587 outsize=4590 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(160): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4590 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3961 outsize=5537 ok=1
+Cmd: preprocessCompute
+  insize=4540 outsize=4543 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4543 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4478 outsize=6429 ok=1
+Cmd: preprocessCompute
+  insize=4680 outsize=4683 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4683 outsize=4546 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: preprocessCompute
+  insize=4692 outsize=4695 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4695 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: preprocessCompute
+  insize=4592 outsize=4595 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4595 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4218 outsize=5872 ok=1
+Cmd: preprocessCompute
+  insize=4591 outsize=4594 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4594 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: preprocessCompute
+  insize=4644 outsize=4647 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4647 outsize=4358 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: preprocessCompute
+  insize=4637 outsize=4640 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4358 outsize=6078 ok=1
+Cmd: preprocessCompute
+  insize=4629 outsize=4632 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4632 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4330 outsize=6043 ok=1

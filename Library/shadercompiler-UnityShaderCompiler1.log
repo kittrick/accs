@@ -10,3 +10,75 @@ Cmd: compileComputeKernel
   api=14 insize=4142 outsize=1915 ok=1
 Cmd: translateComputeKernel
   api=14 insize=2125 outsize=2065 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(156): undeclared identifier 'flip'
+  api=14 insize=4280 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(156): undeclared identifier 'flip'
+  api=14 insize=4280 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2214 outsize=2117 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2214 outsize=2117 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): syntax error: unexpected token ')'
+  error: 2 plat 14 at CCACompute.compute(171): syntax error: unexpected token 'if'
+  api=14 insize=4373 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1727 outsize=1289 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(160): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(161): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(164): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(168): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(169): typed UAV stores must write all declared components.
+  api=14 insize=4478 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1727 outsize=1289 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(161): implicit truncation of vector type
+  api=14 insize=4507 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4327 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4453 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4453 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4517 outsize=4558 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4521 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4522 outsize=4586 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4543 outsize=4478 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4695 outsize=4138 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4594 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4358 outsize=6069 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4632 outsize=4330 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1

@@ -65,6 +65,8 @@ public class CCA2D : MonoBehaviour
     public Material outMat;
     private RenderTexture outTex;
 
+    private RenderTexture readMemTex;
+    private RenderTexture writeMemTex;
     private RenderTexture readTex;
     private RenderTexture writeTex;
 
@@ -106,6 +108,8 @@ public class CCA2D : MonoBehaviour
     {
         readTex = CreateTexture(RenderTextureFormat.RFloat);
         writeTex = CreateTexture(RenderTextureFormat.RFloat);
+        readMemTex = CreateTexture(RenderTextureFormat.RFloat);
+        writeMemTex = CreateTexture(RenderTextureFormat.RFloat);
         outTex = CreateTexture(RenderTextureFormat.ARGBFloat);
 
         stepKernel = cs.FindKernel("StepKernel");
@@ -246,6 +250,8 @@ public class CCA2D : MonoBehaviour
     {
         cs.SetTexture(stepKernel, "readTex", readTex);
         cs.SetTexture(stepKernel, "writeTex", writeTex);
+        cs.SetTexture(stepKernel, "readMemTex", readMemTex);
+        cs.SetTexture(stepKernel, "writeMemTex", writeMemTex);
         cs.SetTexture(stepKernel, "outTex", outTex);
         cs.SetInts("mouse", new int[]{
             (int) Mathf.Abs(Input.mousePosition.x  * rez / cam.pixelWidth) % rez,
@@ -267,6 +273,10 @@ public class CCA2D : MonoBehaviour
         RenderTexture tmp = readTex;
         readTex = writeTex;
         writeTex = tmp;
+        
+        tmp = readMemTex;
+        readMemTex = writeMemTex;
+        writeMemTex = tmp;
     }
     
     protected RenderTexture CreateTexture(RenderTextureFormat format)

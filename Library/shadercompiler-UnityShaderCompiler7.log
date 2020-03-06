@@ -4,3 +4,90 @@ Cmd: compileComputeKernel
   api=14 insize=4143 outsize=1915 ok=1
 Cmd: translateComputeKernel
   api=14 insize=1881 outsize=1622 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4271 outsize=1915 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4452 outsize=1915 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4271 outsize=1915 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(158): undeclared identifier 'deadcount'
+  api=14 insize=4215 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4320 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4343 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4372 outsize=3947 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4401 outsize=3983 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
+  api=14 insize=4377 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
+  api=14 insize=4476 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4477 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4478 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(160): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(161): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(164): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(168): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(169): typed UAV stores must write all declared components.
+  api=14 insize=4478 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1971 outsize=1732 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(161): implicit truncation of vector type
+  api=14 insize=4507 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): undeclared identifier 'memTex'
+  api=14 insize=4318 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4366 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=4146 outsize=5700 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4400 outsize=4182 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): undeclared identifier 'xy'
+  api=14 insize=4452 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): undeclared identifier 'xy'
+  api=14 insize=4455 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4451 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=4446 outsize=6289 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4458 outsize=4446 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4558 outsize=6587 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4521 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4543 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4647 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4632 outsize=1971 ok=1

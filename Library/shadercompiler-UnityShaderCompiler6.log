@@ -6,3 +6,66 @@ Cmd: translateComputeKernel
   api=14 insize=1881 outsize=1621 ok=1
 Cmd: compileComputeKernel
   api=14 insize=4143 outsize=3597 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4271 outsize=3929 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1881 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4452 outsize=1915 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4452 outsize=4301 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1881 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4195 outsize=3665 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1881 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4271 outsize=3929 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1881 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2125 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4232 outsize=3645 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1929 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): syntax error: unexpected token ')'
+  error: 2 plat 14 at CCACompute.compute(171): syntax error: unexpected token 'if'
+  api=14 insize=4373 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
+  api=14 insize=4377 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(161): typed UAV stores must write all declared components.
+  error: 1 plat 14 at CCACompute.compute(161): implicit truncation of vector type
+  error: 2 plat 14 at CCACompute.compute(164): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(168): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(169): typed UAV stores must write all declared components.
+  api=14 insize=4507 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1971 outsize=1732 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(162): undeclared identifier 'memTex'
+  api=14 insize=4313 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): undeclared identifier 'xy'
+  api=14 insize=4452 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4459 outsize=4446 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(160): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4590 outsize=3961 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4683 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4595 outsize=1727 ok=1

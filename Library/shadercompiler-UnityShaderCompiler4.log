@@ -6,3 +6,43 @@ Cmd: translateComputeKernel
   api=14 insize=1851 outsize=1568 ok=1
 Cmd: compileComputeKernel
   api=14 insize=3882 outsize=1671 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4301 outsize=6486 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(156): undeclared identifier 'flip'
+  api=14 insize=4280 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4236 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4320 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(163): l-value specifies const object
+  api=14 insize=4400 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4401 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4478 outsize=1727 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1727 outsize=1289 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): undeclared identifier 'memTex'
+  api=14 insize=4318 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4395 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4400 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(166): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4451 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4517 outsize=1971 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4594 outsize=4218 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4640 outsize=4358 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1

@@ -4,3 +4,71 @@ Cmd: translateComputeKernel
   api=14 insize=4403 outsize=6428 ok=1
 Cmd: translateComputeKernel
   api=14 insize=2125 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(155): syntax error: unexpected token ';'
+  error: 2 plat 14 at CCACompute.compute(156): syntax error: unexpected token '{'
+  error: 2 plat 14 at CCACompute.compute(164): syntax error: unexpected token 'if'
+  api=14 insize=4272 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2125 outsize=2064 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2125 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4177 outsize=1915 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(158): undeclared identifier 'deadcount'
+  api=14 insize=4215 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4232 outsize=1963 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2214 outsize=2117 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4343 outsize=3858 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1970 outsize=1674 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4374 outsize=3995 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
+  api=14 insize=4377 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4493 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(162): undeclared identifier 'memTex'
+  api=14 insize=4313 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4327 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
+  api=14 insize=4366 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4397 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4397 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4453 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4485 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4521 outsize=4586 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4522 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(160): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4590 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4695 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4647 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4640 outsize=1727 ok=1

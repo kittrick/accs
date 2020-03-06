@@ -8,3 +8,74 @@ Cmd: compileComputeKernel
   api=14 insize=3844 outsize=3597 ok=1
 Cmd: translateComputeKernel
   api=14 insize=1881 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2125 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4452 outsize=1671 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4195 outsize=1915 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4177 outsize=3597 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1881 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4398 outsize=3858 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1970 outsize=1674 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(163): l-value specifies const object
+  api=14 insize=4400 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=4372 outsize=1971 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCACompute.compute(160): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(161): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(164): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(168): typed UAV stores must write all declared components.
+  error: 2 plat 14 at CCACompute.compute(169): typed UAV stores must write all declared components.
+  api=14 insize=4477 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1971 outsize=1732 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1727 outsize=1289 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1971 outsize=1732 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1727 outsize=1289 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4397 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4397 outsize=4146 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4453 outsize=4446 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4458 outsize=1727 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
+  api=14 insize=4485 outsize=4526 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4546 outsize=6559 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4138 outsize=5763 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4595 outsize=4218 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1937 outsize=1621 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2181 outsize=2064 ok=1
