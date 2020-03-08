@@ -1,50 +1,125 @@
 Base path: '/Applications/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/2019.3.3f1/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=3750 outsize=3607 ok=1
+  api=14 insize=999 outsize=936 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1851 outsize=1568 ok=1
+  api=14 insize=632 outsize=548 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=3882 outsize=1671 ok=1
+  api=14 insize=1005 outsize=499 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1034 outsize=696 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1048 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=4301 outsize=6486 ok=1
+  api=14 insize=752 outsize=686 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(156): undeclared identifier 'flip'
-  api=14 insize=4280 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4236 outsize=1727 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4320 outsize=1727 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(163): l-value specifies const object
-  api=14 insize=4400 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4401 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4478 outsize=1727 ok=1
+  api=14 insize=1047 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1727 outsize=1289 ok=1
+  api=14 insize=752 outsize=685 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(165): undeclared identifier 'memTex'
-  api=14 insize=4318 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
-  api=14 insize=4395 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4400 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(166): if statement conditional expressions must evaluate to a scalar
-  api=14 insize=4451 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
-  api=14 insize=4517 outsize=1971 ok=1
+  api=14 insize=1118 outsize=880 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2181 outsize=2064 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4594 outsize=4218 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4640 outsize=4358 ok=1
+  api=14 insize=880 outsize=910 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
-
-Quitting shader compiler process
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1060 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1067 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1111 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(39): implicit truncation of vector type
+  api=14 insize=1108 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(37): potentially unintended use of a comma expression in a variable initializer
+  error: 1 plat 14 at ErosionCompute.compute(40): implicit truncation of vector type
+  api=14 insize=1218 outsize=1032 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1032 outsize=1194 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1221 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(43): cannot map expression to cs_5_0 instruction set
+  api=14 insize=1210 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(34): undeclared identifier 'random'
+  api=14 insize=1757 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(17): unrecognized identifier 'vec2'
+  api=14 insize=1722 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(34): undeclared identifier 'vec2'
+  api=14 insize=1694 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1592 outsize=2041 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1759 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1789 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1864 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(52): syntax error: unexpected token '}'
+  error: 2 plat 14 at ErosionCompute.compute(62): undeclared identifier 'id'
+  api=14 insize=1869 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1946 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(62): 'fractalNoise': no matching 1 parameter function
+  api=14 insize=1662 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(54): undeclared identifier 'ler'
+  api=14 insize=1653 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(57): 'noise': no matching 2 parameter function; Possible functions are: noise(floatM|halfM|min10floatM|min16floatM)
+  api=14 insize=1677 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1689 outsize=796 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1651 outsize=1592 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1592 outsize=2041 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1655 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1928 outsize=2788 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1660 outsize=1924 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1924 outsize=2788 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1685 outsize=1932 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1932 outsize=2795 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1760 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1767 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1772 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1782 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1761 outsize=3012 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3012 outsize=4432 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1623 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCAComputeSimple.compute(31): undeclared identifier 'random'
+  api=14 insize=2598 outsize=0 ok=0

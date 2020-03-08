@@ -1,0 +1,76 @@
+﻿#pragma kernel ResetKernel
+#pragma kernel StepKernel
+
+Texture2D<float> readTex;
+SamplerState sampler_readTex;
+
+RWTexture2D<float> writeTex;
+RWTexture2D<float4> outTex;
+
+int rez;
+
+int range;
+int drawRange;
+uint threshold;
+uint nstates;
+bool moore;
+
+// via "The Art of Code" on Youtube
+float2 Random(float2 p) {
+    float3 a = frac(p.xyx * float3(123.34, 234.34, 345.65));
+    a += dot(a, a + 34.450);
+    return frac(float2(a.x * a.y, a.y * a.z));
+}
+
+[numthreads(8, 8, 1)]
+void ResetKernel(uint3 id : SV_DispatchThreadID)
+{
+    writeTex[id.xy] = (int)(Random(id.xy * .01).x * nstates);
+}
+
+void Render(uint3 id, float state)
+{
+    float s = state / (float)nstates;
+    
+    // Random Color Generator
+    outTex[id.xy] = s;
+    
+}
+
+[numthreads(8, 8, 1)]
+void StepKernel(uint3 id : SV_DispatchThreadID)
+{
+    // READ STATE
+    uint state = readTex[id.xy];
+    
+    uint count = 0;
+    uint next = state + 1 == nstates ? 0 : state + 1; // (preserves higher states)
+    
+    // DETERMINE WHETHER EACH DIRECTION CONTAINS NEXT
+    for(int x = -range; x <= range; x++){
+        for(int y = -range; y <= range; y++){
+       
+            // ignore self
+            if((x == 0 && y == 0)){
+                continue;
+            }
+            
+            if(moore || (x == 0 || y == 0)){
+                uint s = readTex.SampleLevel(sampler_readTex, (id.xy + int2(x,y )) / (float)rez, 0);
+                count += (uint) (s == next);
+            }
+            
+        }
+    }
+    
+    // IF THRESHOLD IS REACHED, INCREMENT STEP
+    //if(count >= (threshold - readMemTex[id.xy].x * nstates)){
+    if(count >= threshold){
+        state = (state + 1) % nstates;
+    }
+    
+    // WRITE STATE
+    writeTex[id.xy] = state;
+    
+    Render(id, state);
+}

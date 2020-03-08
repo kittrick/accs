@@ -10,6 +10,14 @@
           <e p="CCA2D.cs" t="Include" />
           <e p="CCACompute.compute" t="Include" />
         </e>
+        <e p="CCA Simple" t="Include">
+          <e p="CCAComputeSimple.compute" t="Include" />
+          <e p="CCASimple.cs" t="Include" />
+        </e>
+        <e p="Erosion" t="Include">
+          <e p="ErosionCompute.compute" t="Include" />
+          <e p="GPUErosion.cs" t="Include" />
+        </e>
         <e p="External Libraries" t="Include">
           <e p="EasyButtons" t="Include">
             <e p="Assets" t="Include">

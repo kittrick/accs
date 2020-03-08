@@ -1,95 +1,105 @@
 Base path: '/Applications/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/2019.3.3f1/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=4143 outsize=1915 ok=1
+  api=14 insize=995 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1881 outsize=1622 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4271 outsize=1915 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4452 outsize=1915 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4271 outsize=1915 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(158): undeclared identifier 'deadcount'
-  api=14 insize=4215 outsize=0 ok=0
+  api=14 insize=896 outsize=970 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2181 outsize=2064 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4320 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4343 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4372 outsize=3947 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4401 outsize=3983 ok=1
+  api=14 insize=1047 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
+  api=14 insize=752 outsize=684 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
-  api=14 insize=4377 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
-  api=14 insize=4476 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4477 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4478 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(160): typed UAV stores must write all declared components.
-  error: 2 plat 14 at CCACompute.compute(161): typed UAV stores must write all declared components.
-  error: 2 plat 14 at CCACompute.compute(164): typed UAV stores must write all declared components.
-  error: 2 plat 14 at CCACompute.compute(168): typed UAV stores must write all declared components.
-  error: 2 plat 14 at CCACompute.compute(169): typed UAV stores must write all declared components.
-  api=14 insize=4478 outsize=0 ok=0
+  api=14 insize=1127 outsize=880 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1971 outsize=1732 ok=1
+  api=14 insize=880 outsize=913 ok=1
 Cmd: compileComputeKernel
-  error: 1 plat 14 at CCACompute.compute(161): implicit truncation of vector type
-  api=14 insize=4507 outsize=1971 ok=1
+  api=14 insize=1284 outsize=896 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(165): undeclared identifier 'memTex'
-  api=14 insize=4318 outsize=0 ok=0
+  api=14 insize=1099 outsize=896 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
-  api=14 insize=4366 outsize=0 ok=0
+  api=14 insize=1111 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(39): implicit truncation of vector type
+  api=14 insize=1112 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1220 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1206 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1206 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(41): undeclared identifier 'x'
+  api=14 insize=1206 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(29): unrecognized identifier 'vec2'
+  api=14 insize=1750 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(31): undeclared identifier 'fract'
+  api=14 insize=1758 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(45): undeclared identifier 'mix'
+  api=14 insize=1700 outsize=0 ok=0
 Cmd: translateComputeKernel
-  api=14 insize=4146 outsize=5700 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4400 outsize=4182 ok=1
+  api=14 insize=1790 outsize=1588 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(166): undeclared identifier 'xy'
-  api=14 insize=4452 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(166): undeclared identifier 'xy'
-  api=14 insize=4455 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(166): if statement conditional expressions must evaluate to a scalar
-  api=14 insize=4451 outsize=0 ok=0
+  api=14 insize=896 outsize=970 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=4446 outsize=6289 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4458 outsize=4446 ok=1
+  api=14 insize=1796 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1753 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1898 outsize=944 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=4558 outsize=6587 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
-  api=14 insize=4521 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4543 outsize=1971 ok=1
+  api=14 insize=944 outsize=1030 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2181 outsize=2064 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4647 outsize=1971 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2181 outsize=2064 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4632 outsize=1971 ok=1
-
-Quitting shader compiler process
+  api=14 insize=1689 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1658 outsize=1876 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1876 outsize=2696 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1658 outsize=1876 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1876 outsize=2696 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(53): 'noise': no matching 0 parameter function; Possible functions are: noise(floatM|halfM|min10floatM|min16floatM)
+  error: 2 plat 14 at ErosionCompute.compute(54): syntax error: unexpected token '/'
+  api=14 insize=1727 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1770 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1761 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1632 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1

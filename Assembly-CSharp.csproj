@@ -58,11 +58,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CCA Simple\CCASimple.cs" />
      <Compile Include="Assets\CCA\CCA2D.cs" />
+     <Compile Include="Assets\Erosion\GPUErosion.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ButtonsExample\ButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\CustomEditorButtonsExample\CustomEditorButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ScriptableObjectExample\ScriptableObjectExample.cs" />
      <None Include="Assets\External Libraries\EasyButtons\LICENSE.txt" />
+     <None Include="Assets\Erosion\ErosionCompute.compute" />
+     <None Include="Assets\CCA Simple\CCAComputeSimple.compute" />
      <None Include="Assets\CCA\CCACompute.compute" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/johmacal/Documents/Unity/accs/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

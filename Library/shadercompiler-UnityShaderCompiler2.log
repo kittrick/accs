@@ -1,76 +1,100 @@
 Base path: '/Applications/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/2019.3.3f1/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: translateComputeKernel
-  api=14 insize=4403 outsize=6428 ok=1
+  api=14 insize=644 outsize=561 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=999 outsize=632 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2125 outsize=2064 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(155): syntax error: unexpected token ';'
-  error: 2 plat 14 at CCACompute.compute(156): syntax error: unexpected token '{'
-  error: 2 plat 14 at CCACompute.compute(164): syntax error: unexpected token 'if'
-  api=14 insize=4272 outsize=0 ok=0
+  api=14 insize=1285 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2125 outsize=2064 ok=1
+  api=14 insize=632 outsize=548 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1099 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1111 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(39): implicit truncation of vector type
+  api=14 insize=1112 outsize=1032 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2125 outsize=2064 ok=1
+  api=14 insize=1032 outsize=1194 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4177 outsize=1915 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(158): undeclared identifier 'deadcount'
-  api=14 insize=4215 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4232 outsize=1963 ok=1
+  api=14 insize=1190 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2214 outsize=2117 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4343 outsize=3858 ok=1
+  error: 2 plat 14 at ErosionCompute.compute(34): undeclared identifier 'random'
+  api=14 insize=1757 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(17): unrecognized identifier 'vec2'
+  api=14 insize=1722 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(18): undeclared identifier 'fract'
+  api=14 insize=1695 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1705 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1720 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1793 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1792 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1970 outsize=1674 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4374 outsize=3995 ok=1
+  api=14 insize=1796 outsize=896 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1724 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(161): invalid subscript 'b'
-  api=14 insize=4377 outsize=0 ok=0
+  error: 2 plat 14 at ErosionCompute.compute(52): undeclared identifier 'x'
+  api=14 insize=1972 outsize=0 ok=0
 Cmd: compileComputeKernel
-  api=14 insize=4493 outsize=1971 ok=1
+  error: 2 plat 14 at ErosionCompute.compute(52): undeclared identifier 'x'
+  api=14 insize=1978 outsize=0 ok=0
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(162): undeclared identifier 'memTex'
-  api=14 insize=4313 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
-  api=14 insize=4327 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(165): if statement conditional expressions must evaluate to a scalar
-  api=14 insize=4366 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4397 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4397 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4453 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
-  api=14 insize=4485 outsize=1971 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
-  api=14 insize=4521 outsize=4586 ok=1
+  api=14 insize=1665 outsize=896 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1937 outsize=1621 ok=1
+  api=14 insize=920 outsize=1098 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=796 outsize=787 ok=1
 Cmd: compileComputeKernel
-  error: 1 plat 14 at CCACompute.compute(159): signed/unsigned mismatch, unsigned assumed
-  api=14 insize=4522 outsize=1971 ok=1
+  api=14 insize=1651 outsize=896 ok=1
 Cmd: compileComputeKernel
-  error: 1 plat 14 at CCACompute.compute(160): signed/unsigned mismatch, unsigned assumed
-  api=14 insize=4590 outsize=1971 ok=1
+  api=14 insize=1660 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4695 outsize=1971 ok=1
+  api=14 insize=1678 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4647 outsize=1727 ok=1
+  api=14 insize=1675 outsize=896 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4640 outsize=1727 ok=1
-
-Quitting shader compiler process
+  error: 2 plat 14 at ErosionCompute.compute(53): 'noise': no matching 0 parameter function; Possible functions are: noise(floatM|halfM|min10floatM|min16floatM)
+  error: 2 plat 14 at ErosionCompute.compute(53): syntax error: unexpected token '/'
+  api=14 insize=1702 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1770 outsize=3000 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3000 outsize=4404 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1771 outsize=896 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3012 outsize=4432 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCAComputeSimple.compute(31): implicit truncation of vector type
+  error: 1 plat 14 at CCAComputeSimple.compute(32): implicit truncation of vector type
+  error: 1 plat 14 at CCAComputeSimple.compute(33): implicit truncation of vector type
+  error: 1 plat 14 at CCAComputeSimple.compute(34): implicit truncation of vector type
+  api=14 insize=2601 outsize=2849 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2849 outsize=3914 ok=1

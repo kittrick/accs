@@ -1,0 +1,79 @@
+﻿#pragma kernel ResetKernel
+#pragma kernel StepKernel
+
+Texture2D<float> readTex;
+SamplerState sampler_readTex;
+
+RWTexture2D<float> writeTex;
+RWTexture2D<float4> outTex;
+
+int rez;
+
+int range;
+int drawRange;
+uint nstates;
+
+// via "The Art of Code" on Youtube
+float random (float2 st) {
+    return frac(sin(dot(st.xy,
+        float2(12.9898,78.233)))
+        * 43758.5453123);
+}
+
+float noise (float2 id) {
+    id = id / 10.;
+    float2 i = floor(id);
+    float2 f = frac(id);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + float2(1.0, 0.0));
+    float c = random(i + float2(0.0, 1.0));
+    float d = random(i + float2(1.0, 1.0));
+
+    // Cubic Hermine Curve.  Same as SmoothStep()
+    float2 u = f*f*(3.0-2.0*f);
+
+    // Mix 4 coorners percentages
+    return lerp(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+float fractalNoise(float2 id, int octaves) {
+    float fn = noise(id);
+    float n = 0.;
+    for(int i = 1; i <= octaves; i++){
+        n = noise(
+            float2(
+                id.x/(float)i+i*1000,
+                id.y/(float)i+i*100)
+            );
+        fn = lerp(fn, n, 1/(float)i);
+    }
+    fn = fn * fn * fn * 2;
+    return fn;
+}
+
+[numthreads(8, 8, 1)]
+void ResetKernel(uint3 id : SV_DispatchThreadID)
+{
+    writeTex[id.xy] = fractalNoise(id.xy, 20);
+}
+
+void Render(uint3 id, float state)
+{
+    outTex[id.xy] = state;
+}
+
+[numthreads(8, 8, 1)]
+void StepKernel(uint3 id : SV_DispatchThreadID)
+{
+    // READ STATE
+    float state = readTex[id.xy];
+    
+    // WRITE STATE
+    writeTex[id.xy] = state;
+    
+    Render(id, state);
+}
