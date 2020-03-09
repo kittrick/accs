@@ -1,22 +1,28 @@
 ﻿#pragma kernel ResetKernel
 #pragma kernel StepKernel
 
-Texture2D<float> readTex;
+Texture2D<float4> readTex;
+RWTexture2D<float4> writeTex;
+RWTexture2D<float4> outTex;
+RWTexture2D<float4> debugTex;
+
 SamplerState sampler_readTex;
 
-RWTexture2D<float> writeTex;
-RWTexture2D<float4> outTex;
+int u_rez;
+int u_range;
+int u_drawRange;
+float u_time;
 
-int rez;
-
-int range;
-int drawRange;
-uint nstates;
+// Red = height
+// Blue = water
+// Green = sediment
+// Alpha = ?? velocity ??
 
 // via "The Art of Code" on Youtube
 float random (float2 st) {
+    float t = frac(u_time);
     return frac(sin(dot(st.xy,
-        float2(12.9898,78.233)))
+        float2(12.9898 + t,78.233)))
         * 43758.5453123);
 }
 
@@ -58,22 +64,86 @@ float fractalNoise(float2 id, int octaves) {
 [numthreads(8, 8, 1)]
 void ResetKernel(uint3 id : SV_DispatchThreadID)
 {
-    writeTex[id.xy] = fractalNoise(id.xy, 20);
+    writeTex[id.xy] = float4(fractalNoise(id.xy, 20),0.,0.,1.);
 }
 
-void Render(uint3 id, float state)
+void Render(uint3 id, float height)
 {
-    outTex[id.xy] = state;
+    outTex[id.xy] = height;
 }
+
+// Rain
+float GetRain(float2 id)
+{
+    float rainFall = fractalNoise(id.xy, 8);
+    return rainFall;
+}
+
+// Evaporation
+float GetEvaporation()
+{
+    float evaporation = .275;
+    return evaporation;
+}
+
+// Calculate the water level
+// Returns water and sediment as X and Y
+float4 Erode(float2 id)
+{
+    // Get values of current square
+    float4 sample = readTex.SampleLevel(sampler_readTex, (id.xy) / (float) u_rez, 0);
+    
+    // Find lowest nearby square
+    float min = 1000.;
+    float2 minLoc = float2(0,0);
+    for(int y = -u_range; y <= u_range; y++){
+        for(int x = -u_range; x <= u_range; x++){
+            if(x == 0 && y == 0){
+                continue;
+            }
+            if(sample.r < min){
+                min = sample.r;
+                minLoc = float2(x,y);
+            }
+        }
+    }
+    
+    // Calculate rain and water flow
+    float rain = GetRain(id.xy);
+    float evaporation = GetEvaporation();
+    float water = sample.b + rain - evaporation;
+    
+    // Move water and sediment based on height difference
+    float4 neighborSample = readTex.SampleLevel(sampler_readTex, (id.xy - minLoc) / (float) u_rez, 0).r;
+    float heightDiff = sample.r - neighborSample.r;
+    float sediment = water * heightDiff;
+    float height = sample.r - sediment;
+    water = sample.b - sediment;
+    
+    debugTex[id.xy] = float4(0., 0., water, 1.);
+    
+    // Set current square values
+    writeTex[id.xy] = float4(height, sediment, water, 1.);
+    
+    // Add water and sediment to adjoining square
+    writeTex[id.xy - minLoc] = float4(
+        max(neighborSample.r + sediment, sample.r),
+        sediment,
+        neighborSample.b + sediment,
+        1.);
+    
+    return writeTex[id.xy];
+}
+
 
 [numthreads(8, 8, 1)]
 void StepKernel(uint3 id : SV_DispatchThreadID)
 {
-    // READ STATE
-    float state = readTex[id.xy];
+    // INITIAL HEIGHT
+    float height = readTex[id.xy].r;
     
-    // WRITE STATE
-    writeTex[id.xy] = state;
+    // EROSION
+    float4 erode = Erode(id.xy);
     
-    Render(id, state);
+    Render(id, height);
 }

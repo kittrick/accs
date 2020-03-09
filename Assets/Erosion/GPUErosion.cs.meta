@@ -8,6 +8,7 @@ MonoImporter:
   - readMat: {fileID: 2100000, guid: aa464169550b34875a8ea6101c613a7c, type: 2}
   - writeMat: {fileID: 2100000, guid: 04cf732f2644f4259b60c2a13e0b56d3, type: 2}
   - outMat: {fileID: 2100000, guid: f9cabc22bba074889af5c1ddb2be2ec9, type: 2}
+  - debugMat: {fileID: 2100000, guid: f7a26300bb51f438a99424b55944ec4c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

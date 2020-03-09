@@ -103,3 +103,75 @@ Cmd: compileComputeKernel
   api=14 insize=1632 outsize=896 ok=1
 Cmd: translateComputeKernel
   api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1642 outsize=3040 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3040 outsize=4483 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3040 outsize=4483 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1647 outsize=896 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(61): typed UAV stores must write all declared components.
+  api=14 insize=1645 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(61): typed UAV stores must write all declared components.
+  api=14 insize=1648 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1656 outsize=3072 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3072 outsize=4562 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1757 outsize=928 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(78): 'fractalNoise': implicit truncation of vector type
+  api=14 insize=1808 outsize=3651 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1811 outsize=3651 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3583 outsize=4907 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3478 outsize=4764 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3818 outsize=5276 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(78): syntax error: unexpected token 'return'
+  error: 2 plat 14 at ErosionCompute.compute(86): 'rain': identifier represents a variable, not a function
+  api=14 insize=2113 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(100): undeclared identifier 'rain'
+  api=14 insize=2248 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=2500 outsize=3830 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2520 outsize=3490 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(95): undeclared identifier 'range'
+  api=14 insize=2908 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(95): undeclared identifier 'range'
+  api=14 insize=2917 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=2928 outsize=3490 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(114): undeclared identifier 'id'
+  api=14 insize=3400 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(100): undeclared identifier 'test'
+  api=14 insize=3004 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(100): undeclared identifier 'test'
+  api=14 insize=3151 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(116): undeclared identifier 'height'
+  api=14 insize=3386 outsize=0 ok=0
+
+Quitting shader compiler process

@@ -8,14 +8,8 @@ public class GPUErosion : MonoBehaviour
     // Primary CCA Parameters
     // ------------------------------
     [Header("Erosion Settings")]
-    
-    const int MAX_RANGE = 10;
-    [Range(1, MAX_RANGE)]
+    [Range(1, 10)]
     public int range = 1;
-
-    const int MAX_STATES = 20;
-    [Range(0, MAX_STATES)]
-    public int nstates = 3;
 
     // ------------------------------
     // Global Parameters
@@ -36,10 +30,12 @@ public class GPUErosion : MonoBehaviour
     public Material readMat;
     public Material writeMat;
     public Material outMat;
+    public Material debugMat;
     
     private RenderTexture outTex;
     private RenderTexture readTex;
     private RenderTexture writeTex;
+    private RenderTexture debugTex;
 
     private int stepKernel;
 
@@ -74,6 +70,7 @@ public class GPUErosion : MonoBehaviour
         readTex = CreateTexture(RenderTextureFormat.ARGBFloat);
         writeTex = CreateTexture(RenderTextureFormat.ARGBFloat);
         outTex = CreateTexture(RenderTextureFormat.ARGBFloat);
+        debugTex = CreateTexture(RenderTextureFormat.ARGBFloat);
 
         stepKernel = cs.FindKernel("StepKernel");
 
@@ -84,11 +81,9 @@ public class GPUErosion : MonoBehaviour
     {
         int k = cs.FindKernel("ResetKernel");
         cs.SetTexture(k, "writeTex", writeTex);
-
-        cs.SetInt("range", range);
-        cs.SetInt("nstates", nstates);
-
-        cs.SetInt("rez", rez);
+        cs.SetTexture(k, "debugTex", debugTex);
+        cs.SetInt("u_range", range);
+        cs.SetInt("u_rez", rez);
         cs.Dispatch(k, rez / 8, rez / 8, 1);
         SwapTex();
     }
@@ -102,6 +97,8 @@ public class GPUErosion : MonoBehaviour
         cs.SetTexture(stepKernel, "readTex", readTex);
         cs.SetTexture(stepKernel, "writeTex", writeTex);
         cs.SetTexture(stepKernel, "outTex", outTex);
+        cs.SetTexture(stepKernel, "debugTex", debugTex);
+        cs.SetFloat("u_time", Time.realtimeSinceStartup);
 
         cs.Dispatch(stepKernel, rez / 8, rez / 8, 1);
 
@@ -110,6 +107,7 @@ public class GPUErosion : MonoBehaviour
         writeMat.SetTexture("_UnlitColorMap", readTex);
         readMat.SetTexture("_UnlitColorMap", writeTex);
         outMat.SetTexture("_UnlitColorMap", outTex);
+        debugMat.SetTexture("_UnlitColorMap", debugTex);
     }
     
     // ------------------------------

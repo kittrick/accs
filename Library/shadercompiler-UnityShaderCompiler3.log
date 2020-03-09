@@ -104,3 +104,101 @@ Cmd: compileComputeKernel
   api=14 insize=2598 outsize=0 ok=0
 Cmd: translateComputeKernel
   api=14 insize=2849 outsize=3914 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1659 outsize=928 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=928 outsize=1032 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=928 outsize=1032 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(65): syntax error: unexpected token ';'
+  api=14 insize=1690 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3040 outsize=4483 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(76): syntax error: unexpected token ';'
+  api=14 insize=1672 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1673 outsize=928 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3546 outsize=4824 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1811 outsize=3546 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3546 outsize=4824 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3546 outsize=4824 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1829 outsize=1271 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1825 outsize=3595 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3818 outsize=5268 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1925 outsize=3818 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3818 outsize=5276 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(98): 'evaporation': identifier represents a function, not a variable
+  api=14 insize=2181 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=2171 outsize=3846 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3846 outsize=5330 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(96): redefinition of 'GetSediment'
+  api=14 insize=2384 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3846 outsize=5325 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3830 outsize=5307 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(111): undeclared identifier 'CalcWaterLevel'
+  api=14 insize=2515 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(117): 'CalcWaterLevel': implicit truncation of vector type
+  api=14 insize=2616 outsize=3830 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3521 outsize=4835 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4381 outsize=6341 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(98): implicit truncation of vector type
+  api=14 insize=3018 outsize=4381 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4381 outsize=6341 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3521 outsize=4835 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3830 outsize=5307 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2991 outsize=3490 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(131): 'Erode': no matching 1 parameter function
+  api=14 insize=2872 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(114): undeclared identifier 'id'
+  api=14 insize=3390 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(97): undeclared identifier 'test'
+  api=14 insize=3188 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(99): undeclared identifier 'test'
+  api=14 insize=2938 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(100): undeclared identifier 'test'
+  api=14 insize=2974 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(100): undeclared identifier 'test'
+  api=14 insize=2974 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(100): undeclared identifier 'test'
+  api=14 insize=3094 outsize=0 ok=0
+
+Quitting shader compiler process

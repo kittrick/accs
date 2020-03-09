@@ -123,3 +123,121 @@ Cmd: compileComputeKernel
 Cmd: compileComputeKernel
   error: 2 plat 14 at CCAComputeSimple.compute(31): undeclared identifier 'random'
   api=14 insize=2598 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1640 outsize=3040 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3040 outsize=4483 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(76): implicit truncation of vector type
+  api=14 insize=1672 outsize=3040 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3040 outsize=4483 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3040 outsize=4483 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=970 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1654 outsize=3072 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3072 outsize=4562 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(76): syntax error: unexpected token ';'
+  api=14 insize=1670 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3072 outsize=4562 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1752 outsize=928 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1756 outsize=928 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1757 outsize=928 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1807 outsize=3478 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3478 outsize=4770 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1809 outsize=3583 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(79): undeclared identifier 'rain'
+  api=14 insize=1824 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=982 outsize=1032 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(81): invalid subscript 'b'
+  api=14 insize=1924 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3818 outsize=5276 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1925 outsize=3818 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3818 outsize=5276 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(82): undeclared identifier 'erosion'
+  api=14 insize=1998 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=2024 outsize=3846 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2094 outsize=3846 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(85): 'rain': identifier represents a variable, not a function
+  api=14 insize=2083 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(85): 'rain': identifier represents a variable, not a function
+  api=14 insize=2085 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2292 outsize=3846 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2304 outsize=3846 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2519 outsize=3830 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3490 outsize=4787 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(117): 'CalcWaterLevel': implicit truncation of vector type
+  api=14 insize=2616 outsize=3490 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3830 outsize=5307 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(127): 'CalcWaterLevel': implicit truncation of vector type
+  api=14 insize=2925 outsize=4377 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3521 outsize=4835 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at ErosionCompute.compute(98): implicit truncation of vector type
+  api=14 insize=3015 outsize=4381 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4381 outsize=6341 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2978 outsize=4574 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3550 outsize=4879 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3550 outsize=4879 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(105): undeclared identifier 'height'
+  api=14 insize=3516 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(97): undeclared identifier 'test'
+  api=14 insize=2905 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(97): undeclared identifier 'test'
+  api=14 insize=2906 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at ErosionCompute.compute(99): undeclared identifier 'test'
+  api=14 insize=2938 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=3392 outsize=4774 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3550 outsize=4879 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=3528 outsize=3490 ok=1
+
+Quitting shader compiler process
