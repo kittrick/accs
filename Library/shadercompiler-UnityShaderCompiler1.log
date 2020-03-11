@@ -1,16 +1,10 @@
-Base path: '/Applications/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/2019.3.3f1/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=2091 outsize=3159 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=2662 outsize=3159 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=1759 outsize=1568 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3159 outsize=4380 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=3623 outsize=3939 ok=1
+  api=14 insize=3729 outsize=4311 ok=1
 Cmd: translateComputeKernel
   api=14 insize=1759 outsize=1568 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=3685 outsize=1579 ok=1
+  api=14 insize=3729 outsize=4311 ok=1
+
+Quitting shader compiler process

@@ -24,7 +24,7 @@ float2 Random(float2 p) {
     return frac(float2(a.x * a.y, a.y * a.z));
 }
 
-[numthreads(8, 8, 1)]
+[numthreads(1, 1, 1)]
 void ResetKernel(uint3 id : SV_DispatchThreadID)
 {
     writeTex[id.xy] = (int)(Random(id.xy * .01).x * nstates);
@@ -116,7 +116,7 @@ void Render(uint3 id, float state, int count)
     
 }
 
-[numthreads(8, 8, 1)]
+[numthreads(1, 1, 1)]
 void StepKernel(uint3 id : SV_DispatchThreadID)
 {
     // READ STATE

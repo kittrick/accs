@@ -1,24 +1,6 @@
-Base path: '/Applications/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/2019.3.3f1/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: translateComputeKernel
-  api=14 insize=3159 outsize=4380 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(45): undeclared identifier 'count'
-  api=14 insize=2663 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=2662 outsize=3131 ok=1
-Cmd: translateComputeKernel
   api=14 insize=1759 outsize=1568 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(118): 'Render': no matching 2 parameter function
-  api=14 insize=2659 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=2695 outsize=1579 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=2695 outsize=3283 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=1759 outsize=1568 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=3555 outsize=3979 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=1759 outsize=1568 ok=1
+
+Quitting shader compiler process

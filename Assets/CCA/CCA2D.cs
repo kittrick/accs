@@ -101,7 +101,7 @@ public class CCA2D : MonoBehaviour
         cs.SetBool("moore", moore);
 
         cs.SetInt("rez", rez);
-        cs.Dispatch(k, rez, rez / 8, 1);
+        cs.Dispatch(k, rez, rez, 1);
         SwapTex();
     }
 
@@ -138,7 +138,7 @@ public class CCA2D : MonoBehaviour
             (int) Mathf.Abs(Input.mousePosition.y  * rez / cam.pixelHeight) % rez
         });
         
-        cs.Dispatch(stepKernel, rez, rez / 8, 1);
+        cs.Dispatch(stepKernel, rez, rez, 1);
 
         SwapTex();
 
