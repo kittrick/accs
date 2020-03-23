@@ -63,27 +63,18 @@ public class CCA2D : MonoBehaviour
     public ComputeShader cs;
 
     public Material outMat;
-    private RenderTexture outTex;
-
-    private RenderTexture readMemTex;
-    private RenderTexture writeMemTex;
     private RenderTexture readTex;
     private RenderTexture writeTex;
+    private RenderTexture outTex;
 
     private int stepKernel;
-    
-    // ------------------------------
-    // Camera for Mouse Control
-    // ------------------------------
-    private Camera cam;
 
     // ------------------------------
     // Start
     // ------------------------------
     private void Start()
     {
-        cam = Camera.main;
-        Reset();    
+        Reset();
     }
 
     // ------------------------------
@@ -108,19 +99,19 @@ public class CCA2D : MonoBehaviour
     {
         readTex = CreateTexture(RenderTextureFormat.RFloat);
         writeTex = CreateTexture(RenderTextureFormat.RFloat);
-        readMemTex = CreateTexture(RenderTextureFormat.RFloat);
-        writeMemTex = CreateTexture(RenderTextureFormat.RFloat);
         outTex = CreateTexture(RenderTextureFormat.ARGBFloat);
 
         stepKernel = cs.FindKernel("StepKernel");
 
         GPUResetKernel();
+        Step();
     }
 
     private void GPUResetKernel()
     {
         int k = cs.FindKernel("ResetKernel");
         cs.SetTexture(k, "writeTex", writeTex);
+        cs.SetFloat("u_time", Time.time);
 
         cs.SetInt("range", range);
         cs.SetInt("drawRange", drawRange);
@@ -149,6 +140,7 @@ public class CCA2D : MonoBehaviour
         cs.SetInt("threshold", threshold);
         cs.SetInt("nstates", nstates);
         cs.SetBool("moore", moore);
+        cs.SetFloat("u_time", Time.time);
     }
     
     public void RandomizeSecondaryParams()
@@ -163,6 +155,7 @@ public class CCA2D : MonoBehaviour
         cs.SetInt("threshold", threshold2);
         cs.SetInt("nstates", nstates2);
         cs.SetBool("moore", moore2);
+        cs.SetFloat("u_time", Time.time);
     }
 
     [Button]
@@ -188,6 +181,7 @@ public class CCA2D : MonoBehaviour
         cs.SetInt("threshold", threshold);
         cs.SetInt("nstates", nstates);
         cs.SetBool("moore", moore);
+        cs.SetFloat("u_time", Time.time);
     }
     
     [Button]
@@ -197,6 +191,7 @@ public class CCA2D : MonoBehaviour
         cs.SetInt("threshold", threshold2);
         cs.SetInt("nstates", nstates2);
         cs.SetBool("moore", moore2);
+        cs.SetFloat("u_time", Time.time);
     }
 
     [Button]
@@ -250,19 +245,14 @@ public class CCA2D : MonoBehaviour
     {
         cs.SetTexture(stepKernel, "readTex", readTex);
         cs.SetTexture(stepKernel, "writeTex", writeTex);
-        cs.SetTexture(stepKernel, "readMemTex", readMemTex);
-        cs.SetTexture(stepKernel, "writeMemTex", writeMemTex);
         cs.SetTexture(stepKernel, "outTex", outTex);
-        cs.SetInts("mouse", new int[]{
-            (int) Mathf.Abs(Input.mousePosition.x  * rez / cam.pixelWidth) % rez,
-            (int) Mathf.Abs(Input.mousePosition.y  * rez / cam.pixelHeight) % rez
-        });
-        
+
         cs.Dispatch(stepKernel, rez / 8, rez / 8, 1);
 
         SwapTex();
 
         outMat.SetTexture("_UnlitColorMap", outTex);
+        cs.SetFloat("u_time", Time.time);
     }
     
     // ------------------------------
@@ -273,10 +263,6 @@ public class CCA2D : MonoBehaviour
         RenderTexture tmp = readTex;
         readTex = writeTex;
         writeTex = tmp;
-        
-        tmp = readMemTex;
-        readMemTex = writeMemTex;
-        writeMemTex = tmp;
     }
     
     protected RenderTexture CreateTexture(RenderTextureFormat format)

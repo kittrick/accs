@@ -2,6 +2,7 @@
 using EasyButtons;
 using UnityEngine;
 
+[ExecuteAlways]
 public class CCASimple : MonoBehaviour
 {
     // ------------------------------

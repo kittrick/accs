@@ -5,9 +5,6 @@
 Texture2D<float> readTex;
 SamplerState sampler_readTex;
 
-Texture2D<float4> readMemTex;
-RWTexture2D<float4> writeMemTex;
-
 RWTexture2D<float> writeTex;
 RWTexture2D<float4> outTex;
 
@@ -18,16 +15,15 @@ int drawRange;
 uint threshold;
 uint nstates;
 bool moore;
+float u_time;
 
 uint deadcount = 0;
 
 float4 colors[21];
 
-uint2 mouse;
-
 // via "The Art of Code" on Youtube
 float2 Random(float2 p) {
-    float3 a = frac(p.xyx * float3(123.34, 234.34, 345.65));
+    float3 a = frac(p.xyx * float3(123.34+u_time, 234.34+u_time, 345.65+u_time));
     a += dot(a, a + 34.450);
     return frac(float2(a.x * a.y, a.y * a.z));
 }
@@ -139,8 +135,8 @@ void StepKernel(uint3 id : SV_DispatchThreadID)
     uint next = state + 1 == nstates ? 0 : state + 1; // (preserves higher states)
     
     // DETERMINE WHETHER EACH DIRECTION CONTAINS NEXT
-    for(int x = min(-(range + (readMemTex[id.xy].x * nstates)), -20); x <= range + max((readMemTex[id.xy].x * nstates), 20); x++){
-        for(int y = min(-(range + (readMemTex[id.xy].x * nstates)), -20); y <= range + max((readMemTex[id.xy].x * nstates), 20); y++){
+    for(int x = -range; x <= range; x++){
+        for(int y = -range; y <= range; y++){
        
             // ignore self
             if((x == 0 && y == 0)){
@@ -156,21 +152,8 @@ void StepKernel(uint3 id : SV_DispatchThreadID)
     }
     
     // IF THRESHOLD IS REACHED, INCREMENT STEP
-    //if(count >= (threshold - readMemTex[id.xy].x * nstates)){
     if(count >= threshold){
         state = (state + 1) % nstates;
-        writeMemTex[id.xy] = 0;
-    } else {
-        writeMemTex[id.xy] += 1. / nstates;
-    }
-    
-    if(readMemTex[id.xy].x > 1){
-        writeMemTex[id.xy] = 0;
-    }
-    
-    // IF MOUSE POSITION MATCHES ID RESET STATE
-    if(distance(id.xy, mouse.xy) < drawRange){
-        state = 0;
     }
     
     // WRITE STATE

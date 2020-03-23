@@ -1,0 +1,180 @@
+﻿#pragma kernel ResetKernel
+#pragma kernel StepKernel
+
+Texture2D<float4> readTex;
+SamplerState sampler_readTex;
+
+RWTexture2D<float4> writeTex;
+RWTexture2D<float4> outTex;
+
+uint rez;
+float u_time;
+int colorCount;
+float4 colors[8];
+bool randomizeColors;
+
+int rangeR;
+uint thresholdR;
+uint nstatesR;
+bool mooreR;
+
+int rangeG;
+uint thresholdG;
+uint nstatesG;
+bool mooreG;
+
+int rangeB;
+uint thresholdB;
+uint nstatesB;
+bool mooreB;
+
+// via "The Art of Code" on Youtube
+float2 Random(float2 p) {
+    float3 a = frac(p.xyx * float3(123.34 + frac(u_time), 234.34 + frac(u_time), 345.65 + frac(u_time)));
+    a += dot(a, a + 34.450);
+    return frac(float2(a.x * a.y, a.y * a.z));
+}
+
+[numthreads(8, 8, 1)]
+void ResetKernel(uint3 id : SV_DispatchThreadID)
+{
+    
+    float4 randomFour = float4(0,0,0,1);
+
+    if(true){
+        randomFour = float4(
+            Random(id.xy * 0.001 + float2(1+frac(u_time),1.2341)).x / 1.,
+            Random(id.xy * 0.001 + float2(1+frac(u_time),1.3124)).x / 1.,
+            Random(id.xy * 0.001 + float2(1+frac(u_time),1.1214)).x / 1.,
+            1.
+            );
+    }
+    
+    if(false){
+        randomFour = float4(
+            Random(id.xy + float2(1+frac(u_time),1.2341)).x / 1.,
+            Random(id.xy + float2(1+frac(u_time),1.2341)).x / 1.,
+            Random(id.xy + float2(1+frac(u_time),1.2341)).x / 1.,
+            1.
+            );
+    }
+    writeTex[id.xy] = randomFour;
+}
+
+void Render(uint3 id, float4 state)
+{
+    if(randomizeColors){
+        for(int i = 0; i < colorCount; i++){
+            float total = (state[0] + state[1] + state[2]) / 3.; 
+            if (total >= 1/(float)colorCount * i){
+                outTex[id.xy] = colors[i];
+            }
+        }
+    }
+    else
+    {
+        outTex[id.xy] = state;
+    }
+}
+
+[numthreads(8, 8, 1)]
+void StepKernel(uint3 id : SV_DispatchThreadID)
+{
+    // READ STATE
+    float4 state = 0;
+    
+    if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
+        state = readTex[id.xy];
+        
+        //////////////////////////////////////////////////
+        // RED
+        //////////////////////////////////////////////////
+        float count = 0;
+        float next = state[0] + 1./(float)nstatesR;
+        
+        // DETERMINE WHETHER EACH DIRECTION CONTAINS NEXT
+        for(int x = -rangeR; x <= rangeR; x++){
+            for(int y = -rangeR; y <= rangeR; y++){
+           
+                // ignore self
+                if((x == 0 && y == 0)){
+                    continue;
+                }
+                
+                if(mooreR || (x == 0 || y == 0)){
+                    float s = readTex.SampleLevel(sampler_readTex, (id.xy + int2(x,y)) / (float)rez, 0)[1];
+                    count += (s > next - 1./(float)nstatesR && s < next + 1./(float)nstatesR);
+                }
+                
+            }
+        }
+        
+        // IF THRESHOLD IS REACHED, INCREMENT STEP
+        if(count >= (float)thresholdR){
+            state[0] = (state[0] + 1./(float)nstatesR) % 1.;
+        }
+        
+        //////////////////////////////////////////////////
+        // GREEN
+        //////////////////////////////////////////////////
+        count = 0;
+        next = state[1] + 1./(float)nstatesG;
+        
+        // DETERMINE WHETHER EACH DIRECTION CONTAINS NEXT
+        for(int x1 = -rangeG; x1 <= rangeG; x1++){
+            for(int y1 = -rangeG; y1 <= rangeG; y1++){
+           
+                // ignore self
+                if((x1 == 0 && y1 == 0)){
+                    continue;
+                }
+                
+                if(mooreG || (x1 == 0 || y1 == 0)){
+                    float s = readTex.SampleLevel(sampler_readTex, (id.xy + int2(x1,y1)) / (float)rez, 0)[2];
+                    count += (s > next - 1./(float)nstatesB && s < next + 1./(float)nstatesB);
+                }
+                
+            }
+        }
+        
+        // IF THRESHOLD IS REACHED, INCREMENT STEP
+        if(count >= (float)thresholdG){
+            state[1] = (state[1] + 1./(float)nstatesG) % 1.;
+        }
+        
+        //////////////////////////////////////////////////
+        // BLUE
+        //////////////////////////////////////////////////
+        count = 0;
+        next = state[2] + 1./(float)nstatesB;
+        
+        // DETERMINE WHETHER EACH DIRECTION CONTAINS NEXT
+        for(int x2 = -rangeB; x2 <= rangeB; x2++){
+            for(int y2 = -rangeB; y2 <= rangeB; y2++){
+           
+                // ignore self
+                if((x2 == 0 && y2 == 0)){
+                    continue;
+                }
+                
+                if(mooreB || (x2 == 0 || y2 == 0)){
+                    float s = readTex.SampleLevel(sampler_readTex, (id.xy + int2(x2,y2)) / (float)rez, 0)[0];
+                    count += (s > next - 1./(float)nstatesB && s < next + 1./(float)nstatesB);
+                }
+                
+            }
+        }
+        
+        // IF THRESHOLD IS REACHED, INCREMENT STEP
+        if(count >= (float)thresholdB){
+            state[2] = (state[2] + 1./(float)nstatesB) % 1.;
+        }
+        
+        
+        // WRITE STATE
+        writeTex[id.xy] = state;
+    }
+    
+    // State is now a float 4            
+    Render(id, state);
+}

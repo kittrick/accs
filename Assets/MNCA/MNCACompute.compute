@@ -1,0 +1,152 @@
+﻿#pragma enable_d3d11_debug_symbols
+#pragma kernel ResetKernel
+#pragma kernel StepKernel
+
+// Resolution
+uint rez;
+float u_time;
+
+// Read, write and output images
+Texture2D<float> readTex;
+SamplerState sampler_readTex;
+RWTexture2D<float> writeTex;
+RWTexture2D<float> outTex;
+
+// Neighborhood Data
+Texture2D<float> neighborhoodZero;
+float minDeathZero;
+float maxDeathZero;
+float minLifeZero;
+float maxLifeZero;
+float deltaValueZero;
+    
+Texture2D<float> neighborhoodOne;
+float minDeathOne;
+float maxDeathOne;
+float minLifeOne;
+float maxLifeOne;
+float deltaValueOne;
+    
+Texture2D<float> neighborhoodTwo;
+float minDeathTwo;
+float maxDeathTwo;
+float minLifeTwo;
+float maxLifeTwo;
+float deltaValueTwo;
+    
+Texture2D<float> neighborhoodThree;
+float minDeathThree;
+float maxDeathThree;
+float minLifeThree;
+float maxLifeThree;
+float deltaValueThree;
+
+// Via "The Art of Code" on Youtube
+float2 random(float2 p) {
+    float3 a = frac(sin(p.xyx * u_time) * float3(123.34, 234.34, 345.65));
+    a += dot(a, a + 36.450);
+    return frac(float2(a.x * a.y, a.y * a.z));
+}
+
+float noise (float2 id) {
+    id = id / 10.;
+    float2 i = floor(id);
+    float2 f = frac(id);
+
+    // Four corners in 2D of a tile
+    float a = random(i).x;
+    float b = random(i + float2(1.0, 0.0)).x;
+    float c = random(i + float2(0.0, 1.0)).x;
+    float d = random(i + float2(1.0, 1.0)).x;
+
+    // Cubic Hermine Curve.  Same as SmoothStep()
+    float2 u = f*f*(3.0-2.0*f);
+
+    // Mix 4 coorners percentages
+    return lerp(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+float fractalNoise(float2 id, int octaves) {
+    float fn = noise(id);
+    float n = 0.;
+    for(int i = 1; i <= octaves; i++){
+        n = noise(
+            float2(
+                id.x/(float)i+i*1000,
+                id.y/(float)i+i*100)
+            );
+        fn = lerp(fn, n, 1/(float)i);
+    }
+    fn = fn * fn * fn * 2;
+    return fn;
+}
+
+[numthreads(8, 8, 1)]
+void ResetKernel(uint3 id : SV_DispatchThreadID)
+{
+    float rand = random(id.xy).x;
+    if(distance(id.xy, int2(floor(rez/(uint)2), floor(rez/(uint)2))) < floor(rez/(uint)10)){
+        rand = fractalNoise(id.xy, 4);
+    }
+    writeTex[id.xy] = rand;
+}
+
+void Render(uint3 id, float state)
+{
+    // Random Color Generator
+    outTex[id.xy] = state;
+}
+
+float NeighborhoodSum(uint3 id, Texture2D<float> neighborhood){
+    float s = 0;
+    if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
+        for(int y = 0; y <= 31 ; y++){
+            for(int x = 0; x <= 31; x++){
+                // Only read if neighborhood xy is black
+                if(neighborhood[int2(x,y)].x <= 0.5){
+                    s += readTex.SampleLevel(sampler_readTex, (id.xy + int2(x, y) - int2(15, 15)) / (float)rez, 0);
+                }
+            }
+        }
+    }
+    return s;
+}
+
+[numthreads(8, 8, 1)]
+void StepKernel(uint3 id : SV_DispatchThreadID)
+{
+    if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
+        // READ STATE
+        float state = readTex[id.xy];
+        
+        // Sample Neighbhorhoods
+        float n0 = NeighborhoodSum(id, neighborhoodZero);
+        float n1 = NeighborhoodSum(id, neighborhoodOne);
+        float n2 = NeighborhoodSum(id, neighborhoodTwo);
+        float n3 = NeighborhoodSum(id, neighborhoodThree);
+        
+        float randomizer = sin(random(id.xy)/4. + u_time * 2.).x;
+        
+        // Tally life or maxDeath
+        if(n0 >= minDeathZero && n0 <= maxDeathZero){ state -= (deltaValueZero + randomizer); }
+        if(n0 >= minLifeZero && n0 <= maxLifeZero){ state += (deltaValueZero + randomizer); }
+        
+        if(n1 >= minDeathOne && n1 <= maxDeathOne){ state -= (deltaValueOne + randomizer); }
+        if(n1 >= minLifeOne && n1 <= maxLifeOne){ state += (deltaValueOne + randomizer); }
+        
+        if(n2 >= minDeathTwo && n2 <= maxDeathTwo){ state -= (deltaValueTwo + randomizer); }
+        if(n2 >= minLifeTwo && n2 <= maxLifeTwo){ state += (deltaValueTwo + randomizer); }
+        
+        if(n3 >= minDeathThree && n3 <= maxDeathThree){ state -= (deltaValueThree + randomizer); }
+        if(n3 >= minLifeThree && n3 <= maxLifeThree){ state += (deltaValueThree + randomizer); }
+        
+        state = state % 1.;
+        
+        // WRITE STATE
+        writeTex[id.xy] = state;
+        
+        Render(id, state);
+    }
+}
