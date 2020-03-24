@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class turntable : MonoBehaviour
 {
-    public float rotationAngle = 1f;
+    public Vector3 rotationAngle;
 
     // Update is called once per frame
     void Update()
     {
-        float currenZrotation = transform.rotation.eulerAngles.y;
-        float newRotaiton = rotationAngle * Time.time;
-        transform.rotation = Quaternion.Euler(0, newRotaiton, 0);
+        Vector3 newRotaiton = rotationAngle * Time.time;
+        transform.rotation = Quaternion.Euler(newRotaiton.x, newRotaiton.y, newRotaiton.z);
     }
 }
