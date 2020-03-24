@@ -65,17 +65,12 @@
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\CustomEditorButtonsExample\CustomEditorButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ScriptableObjectExample\ScriptableObjectExample.cs" />
      <Compile Include="Assets\MNCA\MNCA.cs" />
-     <Compile Include="Assets\TexInstancer 3D\CCA3D.cs" />
-     <Compile Include="Assets\TexInstancer 3D\TexInstancer3D.cs" />
      <Compile Include="Assets\TexInstancer\TexInstancer.cs" />
      <Compile Include="Assets\TexInstancer\turntable.cs" />
-     <None Include="Assets\TexInstancer 3D\TexInstancer3D.shader" />
      <None Include="Assets\TexInstancer\TexInstancer.shader" />
      <None Include="Assets\TexInstancer\Instancer.hlsl" />
      <None Include="Assets\External Libraries\EasyButtons\LICENSE.txt" />
      <None Include="Assets\MNCA\MNCACompute.compute" />
-     <None Include="Assets\TexInstancer 3D\CCA3DCompute.compute" />
-     <None Include="Assets\TexInstancer 3D\Instancer3D.hlsl" />
      <None Include="Assets\CCA Simple\CCAComputeSimple.compute" />
      <None Include="Assets\CCA\CCACompute.compute" />
      <None Include="Assets\CCA RGB\CCARGBCompute.compute" />

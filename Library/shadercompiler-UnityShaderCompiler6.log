@@ -1,27 +1,10 @@
 Base path: '/Applications/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/2019.3.4f1/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: translateComputeKernel
+  api=14 insize=2222 outsize=1989 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=4057 outsize=2037 ok=1
+  api=14 insize=4057 outsize=3427 ok=1
 Cmd: translateComputeKernel
   api=14 insize=2185 outsize=2074 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4182 outsize=1833 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCA3DCompute.compute(132): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
-  api=14 insize=4191 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 1 plat 14 at CCA3DCompute.compute(34): 'Random': implicit truncation of vector type
-  error: 2 plat 14 at CCA3DCompute.compute(53): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
-  api=14 insize=4216 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4230 outsize=1833 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCA3DCompute.compute(9): syntax error: unexpected token 'public'
-  api=14 insize=4237 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCA3DCompute.compute(30): syntax error: unexpected token 'return'
-  api=14 insize=4340 outsize=0 ok=0
-Cmd: compileSnippet
-  api=14 type=0 insize=7290 outsize=8616 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE _DISABLE_DECALS _DISABLE_SSR _MATERIAL_FEATURE_SUBSURFACE_SCATTERING _MATERIAL_FEATURE_TRANSMISSION pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 
 Quitting shader compiler process

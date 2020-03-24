@@ -1,20 +1,9 @@
 Base path: '/Applications/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/2019.3.4f1/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=4057 outsize=2037 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2185 outsize=2074 ok=1
+  error: 2 plat 14 at CCACompute.compute(140): undeclared identifier 'readMemTex'
+  api=14 insize=4603 outsize=0 ok=0
 Cmd: compileComputeKernel
-  error: 2 plat 14 at CCA3DCompute.compute(132): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
-  api=14 insize=4183 outsize=0 ok=0
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCA3DCompute.compute(124): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
-  api=14 insize=4229 outsize=0 ok=0
-Cmd: compileComputeKernel
-  api=14 insize=4230 outsize=2025 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=4231 outsize=3559 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=1981 outsize=1717 ok=1
+  api=14 insize=4071 outsize=2125 ok=1
 
 Quitting shader compiler process

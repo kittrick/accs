@@ -363,7 +363,7 @@ MonoBehaviour:
   cs: {fileID: 7200000, guid: fe776fe5f2e2f4c3e9888f2e8307b50d, type: 3}
   readMat: {fileID: 2100000, guid: 1fda7c88e291f48039852f7fc17fe51f, type: 2}
   writeMat: {fileID: 2100000, guid: d8986591b17214c2f9537c01c729c936, type: 2}
-  outMat: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
+  outMat: {fileID: 2100000, guid: f86e0b8e3e3a14d28886359673fe9b73, type: 2}
 --- !u!114 &663738709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,9 +404,9 @@ MonoBehaviour:
   stepsPerFrame: 1
   stepMod: 1
   cs: {fileID: 7200000, guid: 8419d75ed2967444d9bf1d741ed27824, type: 3}
-  readMat: {fileID: 2100000, guid: 1fda7c88e291f48039852f7fc17fe51f, type: 2}
-  writeMat: {fileID: 2100000, guid: d8986591b17214c2f9537c01c729c936, type: 2}
-  outMat: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
+  readMat: {fileID: 2100000, guid: 231a45bccd6704f789ece923f1e06a0f, type: 2}
+  writeMat: {fileID: 2100000, guid: 9eb6e44afc0af4fa88ee53d051091cf2, type: 2}
+  outMat: {fileID: 2100000, guid: 88866f91c09234a03978e6c36dbba32f, type: 2}
 --- !u!23 &663738710
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -488,9 +488,9 @@ MonoBehaviour:
   stepsPerFrame: 1
   stepMod: 1
   cs: {fileID: 7200000, guid: 7be2af4c965fe402bb4f88d1f84e00a5, type: 3}
-  readMat: {fileID: 2100000, guid: 1fda7c88e291f48039852f7fc17fe51f, type: 2}
-  writeMat: {fileID: 2100000, guid: d8986591b17214c2f9537c01c729c936, type: 2}
-  outMat: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
+  readMat: {fileID: 2100000, guid: 18772279081e34dea982cd900414160b, type: 2}
+  writeMat: {fileID: 2100000, guid: 18c9fe1bdd6f14603ac40d509d90b592, type: 2}
+  outMat: {fileID: 2100000, guid: 5b7a1f89bd8804f06a98d83597842080, type: 2}
 --- !u!1 &965793012
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   instanceMaterial: {fileID: 2100000, guid: 4f664263ec7644107bd8babe6b52c50d, type: 2}
-  inputMaterial: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
+  inputMaterial: {fileID: 2100000, guid: 88866f91c09234a03978e6c36dbba32f, type: 2}
   sizey: 0.43
   size: 0.174
   spacing: 0.0837
