@@ -1,0 +1,175 @@
+﻿#pragma kernel ResetKernel
+#pragma kernel StepKernel
+#pragma kernel SecondaryNoiseKernel
+
+Texture3D<float> readTex;
+SamplerState sampler_readTex;
+
+RWTexture3D<float> writeTex;
+RWTexture3D<float4> outTex;
+
+int rez;
+
+int range;
+int drawRange;
+uint threshold;
+uint nstates;
+bool moore;
+float u_time;
+
+uint deadcount = 0;
+
+float4 colors[21];
+
+// via "The Art of Code" on Youtube
+float2 Random(float3 p) {
+	float3 a = frac(p.xyz * float3(123.34, 234.34, 345.65));
+	a += dot(a, a + 34.45);
+	return frac(float2(a.x * a.y, a.y * a.z));
+}
+
+[numthreads(8, 8, 8)]
+void ResetKernel(uint3 id : SV_DispatchThreadID)
+{ 
+    writeTex[id.xyz] = (int)(Random(id.xyz * .01).x * nstates);
+}
+
+// Convert HSB to RGB
+float4 hsb2rgb(float3 c) {
+    float3 rgb = clamp(abs(((c.x * 6.0 + float3(0.0, 4.0, 2.0)) % 6.0) -
+        3.0) - 1.0, 0.0, 1.0);
+    rgb = rgb * rgb * (2.0 - 2.0 * rgb);
+    float3 o = c.z * lerp(float3(1.0, 1.0, 1.0), rgb, c.y);
+    return float4(o.r, o.g, o.b, 1);
+}
+
+void Render(uint3 id, float state, int count)
+{
+    float s = state / (float)nstates;
+    float c = count / (float)threshold;
+    ////////////////////////////////////////////////
+    // Basic
+    if (false){
+        outTex[id.xyz] = s;
+    }
+    
+    // Fade Basic
+    if (false){
+        outTex[id.xyz] *= .4;
+        outTex[id.xyz] += s;
+    }
+    
+    // Count
+    if (false){
+        outTex[id.xyz] = c;
+    }
+    
+    // Fade Count
+    if (false){
+        outTex[id.xyz] *= .3;
+        outTex[id.xyz] += c;
+    }
+    
+    ////////////////////////////////////////////////
+    float3 hsb = float3(0, .9, 1);
+    
+    // Basic Color
+    if (false) {
+        hsb.x = s;
+        outTex[id.xyz] = hsb2rgb(hsb);
+    }
+    
+    // Range Color
+    if (false) {
+        hsb.x = hsb.y = hsb.z = s;
+        hsb.x = lerp(.3, .0, hsb.x);
+        hsb.y += .7;
+        hsb.z += .6;
+        outTex[id.xyz] = hsb2rgb(hsb);
+    }
+    
+    // Fade Range Color
+    if (false) {
+        hsb.x = hsb.y = hsb.z = s;
+        hsb.x = lerp(.3, .0, hsb.x);
+        hsb.y += .7;
+        hsb.z -= .5;
+        hsb.z *= 5;
+        hsb.z = clamp(hsb.z, 0, 1);
+        outTex[id.xyz] += hsb2rgb(hsb);
+        outTex[id.xyz] *= .7;
+    }
+    
+    // TRY:
+    // 3/15/19/M
+    // Range Count Fade Color
+    if(false) {
+        hsb.x = hsb.y = hsb.z = c;
+        //hsb.x = lerp(.4, 1, hsb.x);   // 1/3/4/M
+        hsb.x = lerp(0, .1, hsb.x);     // 8/14/2/N
+        hsb.y += .7;
+        outTex[id.xyz] += hsb2rgb(hsb);
+        //outTex[id.xy] *= .90; // 1/3/4/M
+        outTex[id.xyz] *= .70;
+    }
+    
+    // Random Color Generator
+    if(true){
+        outTex[id.xyz] = colors[state];
+    }
+    
+    ////////////////////////////////////////////////
+    // Crop
+    float d = distance(float3(rez / 2.0, rez / 2.0, rez / 2.0), id.xyz) / (rez / 2.0);
+    outTex[id.xyz] *= smoothstep(.9, .8, d);
+    
+}
+
+[numthreads(8, 8, 8)]
+void StepKernel(uint3 id : SV_DispatchThreadID)
+{
+    // READ STATE
+    uint state = readTex[id.xyz];
+    
+    uint count = 0;
+    uint next = state + 1 == nstates ? 0 : state + 1; // (preserves higher states)
+    
+    // DETERMINE WHETHER EACH DIRECTION CONTAINS NEXT
+    for(int x = -range; x <= range; x++){
+        for(int y = -range; y <= range; y++){
+            for(int z = -range; z <= range; z++){
+            
+                // ignore self
+                if((x == 0 && y == 0 && z == 0)){
+                    continue;
+                }
+                
+                if(moore || (x == 0 || y == 0 || z == 0)){
+                    uint s = readTex.SampleLevel(sampler_readTex, (id.xyz + int3(x, y, z)) / (float)rez, 0);
+                    count += (uint) (s == next);
+                }
+       
+            }     
+        }
+    }
+    
+    // IF THRESHOLD IS REACHED, INCREMENT STEP
+    if(count >= threshold){
+        state = (state + 1) % nstates;
+    }
+    
+    // WRITE STATE
+    writeTex[id.xyz] = state;
+    
+    Render(id, state, count);
+}
+
+[numthreads(8, 8, 8)]
+void SecondaryNoiseKernel(uint3 id : SV_DispatchThreadID)
+{
+    // if the state will not be a wall
+    if((uint) readTex[id.xyz] < (uint) nstates) {
+        // add noise
+        writeTex[id.xyz] = (int)(Random(id.xyz).x * nstates);
+    }
+}

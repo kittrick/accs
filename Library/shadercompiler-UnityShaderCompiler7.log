@@ -1,8 +1,18 @@
 Base path: '/Applications/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/2019.3.4f1/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=4433 outsize=8283 ok=1
+  error: 2 plat 14 at CCA3DCompute.compute(132): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=14 insize=4183 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCA3DCompute.compute(132): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=14 insize=4187 outsize=0 ok=0
+Cmd: compileSnippet
+  api=14 type=0 insize=7774 outsize=8616 kw=_NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4341 outsize=2025 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4230 outsize=3559 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=6748 outsize=9490 ok=1
+  api=14 insize=2111 outsize=1935 ok=1
 
 Quitting shader compiler process

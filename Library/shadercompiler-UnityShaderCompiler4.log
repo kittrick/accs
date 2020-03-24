@@ -1,12 +1,42 @@
 Base path: '/Applications/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/2019.3.4f1/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=14 insize=4071 outsize=2483 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2040 outsize=1673 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=3932 outsize=2161 ok=1
+  api=14 insize=3457 outsize=4520 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1890 outsize=1575 ok=1
+  api=14 insize=2185 outsize=2074 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCA3DCompute.compute(132): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=14 insize=4187 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCA3DCompute.compute(34): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=14 insize=4203 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCA3DCompute.compute(28): cannot implicitly convert from 'const float2' to 'float3'
+  api=14 insize=4205 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCA3DCompute.compute(53): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=14 insize=4216 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCA3DCompute.compute(123): incorrect number of arguments to numeric-type constructor
+  api=14 insize=4229 outsize=0 ok=0
+Cmd: compileSnippet
+  api=14 type=0 insize=7290 outsize=8616 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at CCA3DCompute.compute(9): syntax error: unexpected token 'public'
+  api=14 insize=4237 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=2173 outsize=2043 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4231 outsize=2025 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at CCA3DCompute.compute(34): 'Random': implicit truncation of vector type
+  error: 1 plat 14 at CCA3DCompute.compute(173): 'Random': implicit truncation of vector type
+  api=14 insize=4189 outsize=1963 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=4189 outsize=3559 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1879 outsize=1524 ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=7774 outsize=8616 kw=_NORMALMAP_TANGENT_SPACE _DISABLE_DECALS _DISABLE_SSR _MATERIAL_FEATURE_SUBSURFACE_SCATTERING _MATERIAL_FEATURE_TRANSMISSION pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 
 Quitting shader compiler process
