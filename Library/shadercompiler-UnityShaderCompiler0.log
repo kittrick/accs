@@ -1,19 +1,2 @@
 Base path: '/Applications/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/2019.3.4f1/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: preprocessCompute
-  insize=4600 outsize=4603 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at CCACompute.compute(140): undeclared identifier 'readMemTex'
-  api=14 insize=4603 outsize=0 ok=0
-Cmd: preprocessCompute
-  insize=4068 outsize=4071 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2544 outsize=2451 ok=1
-Cmd: preprocessCompute
-  insize=3929 outsize=3932 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2094 outsize=1933 ok=1
-Cmd: preprocessCompute
-  insize=4054 outsize=4057 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=1981 outsize=1716 ok=1

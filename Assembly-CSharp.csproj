@@ -61,7 +61,6 @@
      <Compile Include="Assets\CCA RGB\CCARGB.cs" />
      <Compile Include="Assets\CCA Simple\CCASimple.cs" />
      <Compile Include="Assets\CCA\CCA2D.cs" />
-     <Compile Include="Assets\Erosion\GPUErosion.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ButtonsExample\ButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\CustomEditorButtonsExample\CustomEditorButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ScriptableObjectExample\ScriptableObjectExample.cs" />
@@ -71,7 +70,6 @@
      <None Include="Assets\TexInstancer\TexInstancer.shader" />
      <None Include="Assets\TexInstancer\Instancer.hlsl" />
      <None Include="Assets\External Libraries\EasyButtons\LICENSE.txt" />
-     <None Include="Assets\Erosion\ErosionCompute.compute" />
      <None Include="Assets\MNCA\MNCACompute.compute" />
      <None Include="Assets\CCA Simple\CCAComputeSimple.compute" />
      <None Include="Assets\CCA\CCACompute.compute" />
