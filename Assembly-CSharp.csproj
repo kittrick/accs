@@ -64,6 +64,7 @@
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ButtonsExample\ButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\CustomEditorButtonsExample\CustomEditorButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ScriptableObjectExample\ScriptableObjectExample.cs" />
+     <Compile Include="Assets\HistoryStack\AppendHistoryInstancer.cs" />
      <Compile Include="Assets\MNCA\MNCA.cs" />
      <Compile Include="Assets\TexInstancer 3D\CCA3D.cs" />
      <Compile Include="Assets\TexInstancer 3D\TexInstancer3D.cs" />
@@ -74,10 +75,13 @@
      <None Include="Assets\TexInstancer\Instancer.hlsl" />
      <None Include="Assets\External Libraries\EasyButtons\LICENSE.txt" />
      <None Include="Assets\MNCA\MNCACompute.compute" />
+     <None Include="Assets\HistoryStack\AppendHistory.compute" />
      <None Include="Assets\TexInstancer 3D\CCA3DCompute.compute" />
      <None Include="Assets\TexInstancer 3D\Instancer3D.hlsl" />
+     <None Include="Assets\HistoryStack\TexInstancerHIstory.shader" />
      <None Include="Assets\CCA Simple\CCAComputeSimple.compute" />
      <None Include="Assets\CCA\CCACompute.compute" />
+     <None Include="Assets\HistoryStack\InstancerHistory.hlsl" />
      <None Include="Assets\CCA RGB\CCARGBCompute.compute" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/johmacal/Documents/Unity/accs/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

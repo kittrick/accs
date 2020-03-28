@@ -87,9 +87,9 @@ float fractalNoise(float2 id, int octaves) {
 void ResetKernel(uint3 id : SV_DispatchThreadID)
 {
     float rand = random(id.xy).x;
-    if(distance(id.xy, int2(floor(rez/(uint)2), floor(rez/(uint)2))) < floor(rez/(uint)10)){
-        rand = fractalNoise(id.xy, 4);
-    }
+    //if(distance(id.xy, int2(floor(rez/(uint)2), floor(rez/(uint)2))) < floor(rez/(uint)10)){
+    //    rand = fractalNoise(id.xy, 4);
+    //}
     writeTex[id.xy] = rand;
 }
 
@@ -101,7 +101,7 @@ void Render(uint3 id, float state)
 
 float NeighborhoodSum(uint3 id, Texture2D<float> neighborhood){
     float s = 0;
-    if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
+    //if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
         for(int y = 0; y <= 31 ; y++){
             for(int x = 0; x <= 31; x++){
                 // Only read if neighborhood xy is black
@@ -110,14 +110,14 @@ float NeighborhoodSum(uint3 id, Texture2D<float> neighborhood){
                 }
             }
         }
-    }
+    //}
     return s;
 }
 
 [numthreads(8, 8, 1)]
 void StepKernel(uint3 id : SV_DispatchThreadID)
 {
-    if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
+    //if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
         // READ STATE
         float state = readTex[id.xy];
         
@@ -146,7 +146,6 @@ void StepKernel(uint3 id : SV_DispatchThreadID)
         
         // WRITE STATE
         writeTex[id.xy] = state;
-        
         Render(id, state);
-    }
+    //}
 }

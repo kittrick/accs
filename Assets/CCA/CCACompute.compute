@@ -120,9 +120,8 @@ void Render(uint3 id, float state, int count)
     
     ////////////////////////////////////////////////
     // Crop
-    float d = distance(float2(rez / 2.0, rez / 2.0), id.xy) / (rez / 2.0);
-    outTex[id.xy] *= smoothstep(.9, .8, d);
-    
+    //float d = distance(float2(rez / 2.0, rez / 2.0), id.xy) / (rez / 2.0);
+    //outTex[id.xy] *= smoothstep(.9, .8, d);
 }
 
 [numthreads(8, 8, 1)]

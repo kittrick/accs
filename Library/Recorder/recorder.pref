@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 54
+  take: 62
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:

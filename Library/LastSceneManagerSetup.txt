@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/TexInstancer 3D/TexInstancer3D.unity
+- path: Assets/HistoryStack/HistoryStack.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

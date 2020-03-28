@@ -50,6 +50,12 @@
             <e p="LICENSE.txt" t="Include" />
           </e>
         </e>
+        <e p="HistoryStack" t="Include">
+          <e p="AppendHistory.compute" t="Include" />
+          <e p="AppendHistoryInstancer.cs" t="Include" />
+          <e p="InstancerHistory.hlsl" t="Include" />
+          <e p="TexInstancerHIstory.shader" t="Include" />
+        </e>
         <e p="MNCA" t="Include">
           <e p="MNCA.cs" t="Include" />
           <e p="MNCACompute.compute" t="Include" />
