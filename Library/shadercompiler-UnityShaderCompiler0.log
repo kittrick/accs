@@ -166,3 +166,32 @@ Cmd: preprocessCompute
   insize=1517 outsize=1522 ok=1
 Cmd: translateComputeKernel
   api=14 insize=1589 outsize=1917 ok=1
+Cmd: preprocessCompute
+  insize=1558 outsize=1565 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'MoveAgentsKernel' to compile
+  api=14 insize=1565 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1589 outsize=1917 ok=1
+Cmd: preprocessCompute
+  insize=1644 outsize=1651 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1651 outsize=639 ok=1
+Cmd: preprocessCompute
+  insize=1683 outsize=1690 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1690 outsize=1104 ok=1
+Cmd: preprocessCompute
+  insize=1685 outsize=1692 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1183 outsize=1169 ok=1
+Cmd: preprocessCompute
+  insize=2019 outsize=2026 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2026 outsize=505 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1965 outsize=2580 ok=1
+Cmd: preprocessCompute
+  insize=2227 outsize=2234 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2234 outsize=639 ok=1

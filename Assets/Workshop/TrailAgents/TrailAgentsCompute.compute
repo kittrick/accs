@@ -4,6 +4,9 @@
 #pragma kernel ResetTextureKernel
 #pragma kernel ResetAgentsKernel
 
+// Step
+#pragma kernel MoveAgentsKernel
+
 // Render
 #pragma kernel AgentsDebugKernel
 
@@ -37,6 +40,10 @@ float2 Random(float2 p) {
     return frac(float2(a.x * a.y, a.y * a.z));
 }
 
+float2 RandomDirection(float2 p) {
+    return (normalize(2.0 * (Random(p)- 0.5)));
+}
+
 // ------------------------------------------------------------
 // RESET
 // ------------------------------------------------------------
@@ -53,7 +60,30 @@ void ResetAgentsKernel(uint3 id : SV_DispatchThreadID)
     Agent a;
     
     a.position = Random(id.x * .0001 + time * .001) * rez;
-    a.direction = 0;
+    a.direction = RandomDirection(id.xx * .01 + sin(time));
+    
+    agentsBuffer[id.x] = a;
+}
+
+// ------------------------------------------------------------
+// STEP
+// ------------------------------------------------------------
+[numthreads(1, 1, 1)]
+void MoveAgentsKernel(uint3 id : SV_DispatchThreadID)
+{
+    Agent a = agentsBuffer[id.x];
+    
+    // Move Forward
+    a.position = a.position + a.direction;
+    
+    // Boundaries: Wrap
+    if(a.position.x < 0){
+        a.position.x = rez - 1;
+    }
+    if(a.position.y < 0){
+        a.position.y = rez - 1;
+    }
+    a.position % float2(rez, rez);
     
     agentsBuffer[id.x] = a;
 }

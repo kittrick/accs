@@ -37,6 +37,7 @@ public class TrailAgents : MonoBehaviour
     private RenderTexture writeTex;
 
     private int agentsDebugKernel;
+    private int moveAgentsKernel;
     
     protected List<ComputeBuffer> buffers;
     protected List<RenderTexture> textures;
@@ -52,6 +53,7 @@ public class TrailAgents : MonoBehaviour
     {
         Release();
         agentsDebugKernel = cs.FindKernel("AgentsDebugKernel");
+        moveAgentsKernel = cs.FindKernel("MoveAgentsKernel");
         
         readTex = CreateTexture(rez, FilterMode.Point);
         writeTex = CreateTexture(rez, FilterMode.Point);
@@ -112,8 +114,17 @@ public class TrailAgents : MonoBehaviour
     public void Step()
     {
         stepn += 1;
+        GPUMoveAgentsKernel();
 
         Render();
+    }
+
+    private void GPUMoveAgentsKernel()
+    {
+        cs.SetBuffer(moveAgentsKernel, "agentsBuffer", agentsBuffer);
+        cs.SetTexture(moveAgentsKernel, "readTex", readTex);
+        
+        cs.Dispatch(moveAgentsKernel, agentsCount, 1, 1);
     }
 
     public void Render()

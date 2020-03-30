@@ -41,3 +41,16 @@ Cmd: compileComputeKernel
 Cmd: compileComputeKernel
   error: 2 plat 14 at TrailAgentsCompute.compute(56): undeclared identifier 'agentsBuffer'
   api=14 insize=1481 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=1565 outsize=639 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1589 outsize=1917 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'MoveAgentsKernel' to compile
+  api=14 insize=1690 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=1183 outsize=1169 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1692 outsize=639 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2234 outsize=1104 ok=1

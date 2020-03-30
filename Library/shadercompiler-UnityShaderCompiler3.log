@@ -33,3 +33,11 @@ Cmd: compileComputeKernel
 Cmd: compileComputeKernel
   error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
   api=14 insize=1432 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=718 outsize=523 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1692 outsize=1104 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=2234 outsize=1436 ok=1
+
+Quitting shader compiler process

@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fefd827caac14454b58208af55c106c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentsCount: 1
-  rez: 8
+  agentsCount: 10
+  rez: 512
   stepsPerFrame: 1
   stepMod: 1
   cs: {fileID: 7200000, guid: 692573ad61da54ec8b96dfb882632e80, type: 3}
