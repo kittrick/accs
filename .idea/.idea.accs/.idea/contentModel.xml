@@ -6,6 +6,10 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Agents" t="Include">
+          <e p="Agents.cs" t="Include" />
+          <e p="AgentsCompute.compute" t="Include" />
+        </e>
         <e p="CCA" t="Include">
           <e p="CCA2D.cs" t="Include" />
           <e p="CCACompute.compute" t="Include" />
@@ -58,6 +62,8 @@
         </e>
         <e p="MNCA" t="Include">
           <e p="MNCA.cs" t="Include" />
+          <e p="MNCA2.cs" t="Include" />
+          <e p="MNCA2Compute.compute" t="Include" />
           <e p="MNCACompute.compute" t="Include" />
         </e>
         <e p="TexInstancer" t="Include">

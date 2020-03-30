@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 9fefd827caac14454b58208af55c106c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - neighborhoodZero: {fileID: 2800000, guid: 9f77427c6487f4701ae1ee3f3b8058fb, type: 3}
+  - neighborhoodOne: {fileID: 2800000, guid: aa1a9d0de867346cc8ef6d7e13c1ec2a, type: 3}
+  - neighborhoodTwo: {fileID: 2800000, guid: f86bcdecaab3e463c83449394865fcec, type: 3}
+  - neighborhoodThree: {fileID: 2800000, guid: 14b6bca9050ab4eefb9ec3873f91f617, type: 3}
+  - cs: {fileID: 7200000, guid: 692573ad61da54ec8b96dfb882632e80, type: 3}
+  - readMat: {fileID: 2100000, guid: 1fda7c88e291f48039852f7fc17fe51f, type: 2}
+  - writeMat: {fileID: 2100000, guid: d8986591b17214c2f9537c01c729c936, type: 2}
+  - outMat: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

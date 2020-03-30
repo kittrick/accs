@@ -1,0 +1,103 @@
+﻿#pragma enable_d3d11_debug_symbols
+#pragma kernel ResetKernel
+#pragma kernel StepKernel
+
+// Resolution
+uint rez;
+float u_time;
+
+// Read, write and output images
+Texture2D<float> readTex;
+SamplerState sampler_readTex;
+RWTexture2D<float> writeTex;
+RWTexture2D<float> outTex;
+
+// Neighborhood Data
+Texture2D<float> neighborhoodZero;
+int minDeathZero;
+int maxDeathZero;
+int minLifeZero;
+int maxLifeZero;
+    
+Texture2D<float> neighborhoodOne;
+int minLifeOne;
+int maxLifeOne;
+    
+Texture2D<float> neighborhoodTwo;
+int minDeathTwo;
+int maxDeathTwo;
+    
+Texture2D<float> neighborhoodThree;
+int minDeathThree;
+int maxDeathThree;
+int overflowDeathThree;
+
+// Via "The Art of Code" on Youtube
+float2 random(float2 p) {
+    float3 a = frac(sin(p.xyx * u_time) * float3(123.34, 234.34, 345.65));
+    a += dot(a, a + 36.450);
+    return frac(float2(a.x * a.y, a.y * a.z));
+}
+
+[numthreads(32, 32, 1)]
+void ResetKernel(uint3 id : SV_DispatchThreadID)
+{
+    float rand = random(id.xy).x;
+    rand = rand > .5 ? 1. : 0.;
+    if(distance(id.xy, int2(rez/2, rez/2)) < 20){
+        rand = 1;
+    }
+    if(distance(id.xy, int2(rez/2, rez/2)) < 10){
+        rand = 0;
+    }
+    writeTex[id.xy] = rand;
+}
+
+void Render(uint3 id, int state)
+{
+    // Random Color Generator
+    outTex[id.xy] = state;
+}
+
+int NeighborhoodSum(uint3 id, Texture2D<float> neighborhood){
+    int n = 0;
+    for(int y = 0; y <= 31 ; y++){
+        for(int x = 0; x <= 31; x++){
+            // Only read if neighborhood xy is black
+            if(neighborhood[int2(x,y)].x < .5){
+                n += (int)readTex.SampleLevel(sampler_readTex, (id.xy + int2(x, y) - int2(15, 15)) / (float)rez, 0).r;
+            }
+        }
+    }
+    return n;
+}
+
+[numthreads(32, 32, 1)]
+void StepKernel(uint3 id : SV_DispatchThreadID)
+{
+    if((uint)distance(id.xy, float2(rez/2,rez/2)) < rez/2){
+        // READ STATE
+        int state = readTex[id.xy];
+        
+        // Sample Neighbhorhoods
+        int n0 = NeighborhoodSum(id, neighborhoodZero);
+        int n1 = NeighborhoodSum(id, neighborhoodOne);
+        int n2 = NeighborhoodSum(id, neighborhoodTwo);
+        int n3 = NeighborhoodSum(id, neighborhoodThree);
+        
+        // Tally life or maxDeath
+        if(n0 >= minDeathZero && n0 < maxDeathZero){ state = 0; }
+        if(n0 >= minLifeZero && n0 < maxLifeZero){ state = 1; }
+        
+        if(n1 >= minLifeOne && n1 < maxLifeOne){ state = 1; }
+        
+        if(n2 >= minDeathTwo && n2 < maxDeathTwo){ state = 0; }
+        
+        if(n3 >= minDeathThree && n3 < maxDeathThree){ state = 0; }
+        //if(n3 >= overflowDeathThree){ state = 0; }
+        
+        // WRITE STATE
+        writeTex[id.xy] = state;
+        Render(id, state);
+    }
+}

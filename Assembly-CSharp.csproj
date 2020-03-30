@@ -58,31 +58,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CCA RGB\CCARGB.cs" />
-     <Compile Include="Assets\CCA Simple\CCASimple.cs" />
-     <Compile Include="Assets\CCA\CCA2D.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ButtonsExample\ButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\CustomEditorButtonsExample\CustomEditorButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ScriptableObjectExample\ScriptableObjectExample.cs" />
-     <Compile Include="Assets\HistoryStack\AppendHistoryInstancer.cs" />
-     <Compile Include="Assets\MNCA\MNCA.cs" />
-     <Compile Include="Assets\TexInstancer 3D\CCA3D.cs" />
-     <Compile Include="Assets\TexInstancer 3D\TexInstancer3D.cs" />
-     <Compile Include="Assets\TexInstancer\TexInstancer.cs" />
-     <Compile Include="Assets\TexInstancer\turntable.cs" />
-     <None Include="Assets\TexInstancer 3D\TexInstancer3D.shader" />
-     <None Include="Assets\TexInstancer\TexInstancer.shader" />
-     <None Include="Assets\TexInstancer\Instancer.hlsl" />
+     <Compile Include="Assets\Workshop\Agents\Agents.cs" />
+     <Compile Include="Assets\Workshop\CCA RGB\CCARGB.cs" />
+     <Compile Include="Assets\Workshop\CCA Simple\CCASimple.cs" />
+     <Compile Include="Assets\Workshop\CCA\CCA2D.cs" />
+     <Compile Include="Assets\Workshop\HistoryStack\AppendHistoryInstancer.cs" />
+     <Compile Include="Assets\Workshop\MNCA\MNCA.cs" />
+     <Compile Include="Assets\Workshop\MNCA\MNCA2.cs" />
+     <Compile Include="Assets\Workshop\TexInstancer 3D\CCA3D.cs" />
+     <Compile Include="Assets\Workshop\TexInstancer 3D\TexInstancer3D.cs" />
+     <Compile Include="Assets\Workshop\TexInstancer\TexInstancer.cs" />
+     <Compile Include="Assets\Workshop\TexInstancer\turntable.cs" />
+     <None Include="Assets\Workshop\TexInstancer 3D\TexInstancer3D.shader" />
+     <None Include="Assets\Workshop\TexInstancer\TexInstancer.shader" />
+     <None Include="Assets\Workshop\TexInstancer\Instancer.hlsl" />
      <None Include="Assets\External Libraries\EasyButtons\LICENSE.txt" />
-     <None Include="Assets\MNCA\MNCACompute.compute" />
-     <None Include="Assets\HistoryStack\AppendHistory.compute" />
-     <None Include="Assets\TexInstancer 3D\CCA3DCompute.compute" />
-     <None Include="Assets\TexInstancer 3D\Instancer3D.hlsl" />
-     <None Include="Assets\HistoryStack\TexInstancerHIstory.shader" />
-     <None Include="Assets\CCA Simple\CCAComputeSimple.compute" />
-     <None Include="Assets\CCA\CCACompute.compute" />
-     <None Include="Assets\HistoryStack\InstancerHistory.hlsl" />
-     <None Include="Assets\CCA RGB\CCARGBCompute.compute" />
+     <None Include="Assets\Workshop\MNCA\MNCA2Compute.compute" />
+     <None Include="Assets\Workshop\MNCA\MNCACompute.compute" />
+     <None Include="Assets\Workshop\HistoryStack\AppendHistory.compute" />
+     <None Include="Assets\Workshop\TexInstancer 3D\CCA3DCompute.compute" />
+     <None Include="Assets\Workshop\TexInstancer 3D\Instancer3D.hlsl" />
+     <None Include="Assets\Workshop\HistoryStack\TexInstancerHIstory.shader" />
+     <None Include="Assets\Workshop\Agents\AgentsCompute.compute" />
+     <None Include="Assets\Workshop\CCA Simple\CCAComputeSimple.compute" />
+     <None Include="Assets\Workshop\CCA\CCACompute.compute" />
+     <None Include="Assets\Workshop\HistoryStack\InstancerHistory.hlsl" />
+     <None Include="Assets\Workshop\CCA RGB\CCARGBCompute.compute" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/johmacal/Documents/Unity/accs/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

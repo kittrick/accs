@@ -1,0 +1,23 @@
+﻿#pragma kernel WriteHistory
+
+struct Voxel {
+    float3 position;
+    float4 color;
+};
+AppendStructuredBuffer<Voxel> voxelBuffer;
+
+Texture2D<float4> inTex;
+int index;
+
+[numthreads(32,32,1)]
+void WriteHistory(uint3 id : SV_DispatchThreadID)
+{
+    float4 c = inTex[id.xy];
+    
+    if(c.r > .5) {
+        Voxel v;
+        v.position = float3(id.x, index, id.y);
+        v.color = c;
+        voxelBuffer.Append(v);
+    }
+}
