@@ -8,3 +8,36 @@ Cmd: compileSnippet
   api=14 type=1 insize=7295 outsize=17196 kw=UNITY_PASS_SHADOWCASTER _NORMALMAP_TANGENT_SPACE _DISABLE_DECALS _ENABLE_GEOMETRIC_SPECULAR_AA _MATERIAL_FEATURE_SUBSURFACE_SCATTERING _MATERIAL_FEATURE_TRANSMISSION pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 Cmd: compileSnippet
   api=14 type=1 insize=8247 outsize=23345 kw=SHADOWS_SHADOWMASK DECALS_3RT _NORMALMAP_TANGENT_SPACE _DISABLE_DECALS _DISABLE_SSR _ENABLE_GEOMETRIC_SPECULAR_AA _MATERIAL_FEATURE_SUBSURFACE_SCATTERING _MATERIAL_FEATURE_TRANSMISSION pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'AgentsDebugKernel' to compile
+  api=14 insize=281 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetAgentsKernel' to compile
+  api=14 insize=345 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'AgentsDebugKernel' to compile
+  api=14 insize=377 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetAgentsKernel' to compile
+  api=14 insize=379 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'AgentsDebugKernel' to compile
+  api=14 insize=415 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1178 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1180 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1317 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1432 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1481 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(56): undeclared identifier 'agentsBuffer'
+  api=14 insize=1481 outsize=0 ok=0

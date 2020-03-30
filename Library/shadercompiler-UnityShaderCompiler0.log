@@ -38,3 +38,131 @@ Cmd: preprocess
   insize=55556 outsize=31872 ok=1
 Cmd: preprocess
   insize=55532 outsize=31869 ok=1
+Cmd: preprocessCompute
+  insize=2702 outsize=2705 ok=1
+Cmd: preprocessCompute
+  insize=2328 outsize=2331 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(63): 'NeighborhoodSum': no matching 2 parameter function
+  error: 2 plat 14 at TrailAgentsCompute.compute(63): undeclared identifier 'neighborhoodZero'
+  api=14 insize=2331 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=80 outsize=81 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  api=14 insize=81 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=82 outsize=83 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  api=14 insize=83 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=240 outsize=243 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  api=14 insize=243 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=243 outsize=246 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  error: 2 plat 14 at TrailAgentsCompute.compute(1): syntax error : unexpected end of line
+  api=14 insize=246 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=257 outsize=260 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  error: 1 plat 14 at TrailAgentsCompute.compute(1): 'enabled' : unknown pragma ignored
+  api=14 insize=260 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=276 outsize=281 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetAgentsKernel' to compile
+  api=14 insize=281 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=276 outsize=281 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  api=14 insize=281 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=337 outsize=342 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(21): syntax error: unexpected end of file
+  api=14 insize=342 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=339 outsize=344 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(23): syntax error: unexpected end of file
+  api=14 insize=344 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=340 outsize=345 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  api=14 insize=345 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=372 outsize=377 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  api=14 insize=377 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=374 outsize=379 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'AgentsDebugKernel' to compile
+  api=14 insize=379 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=410 outsize=415 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'ResetTextureKernel' to compile
+  api=14 insize=415 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=710 outsize=715 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=715 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=899 outsize=904 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=904 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=956 outsize=961 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=961 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1173 outsize=1178 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1178 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1173 outsize=1178 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1178 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1173 outsize=1178 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1178 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1175 outsize=1180 ok=1
+Cmd: preprocessCompute
+  insize=1312 outsize=1317 ok=1
+Cmd: preprocessCompute
+  insize=1427 outsize=1432 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1432 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1476 outsize=1481 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(33): incorrect number of arguments to numeric-type constructor
+  api=14 insize=1481 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1476 outsize=1481 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at TrailAgentsCompute.compute(56): undeclared identifier 'agentsBuffer'
+  api=14 insize=1481 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1517 outsize=1522 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1589 outsize=1917 ok=1

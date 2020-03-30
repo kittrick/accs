@@ -6,22 +6,6 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Agents" t="Include">
-          <e p="Agents.cs" t="Include" />
-          <e p="AgentsCompute.compute" t="Include" />
-        </e>
-        <e p="CCA" t="Include">
-          <e p="CCA2D.cs" t="Include" />
-          <e p="CCACompute.compute" t="Include" />
-        </e>
-        <e p="CCA RGB" t="Include">
-          <e p="CCARGB.cs" t="Include" />
-          <e p="CCARGBCompute.compute" t="Include" />
-        </e>
-        <e p="CCA Simple" t="Include">
-          <e p="CCAComputeSimple.compute" t="Include" />
-          <e p="CCASimple.cs" t="Include" />
-        </e>
         <e p="External Libraries" t="Include">
           <e p="EasyButtons" t="Include">
             <e p="Assets" t="Include">
@@ -54,30 +38,48 @@
             <e p="LICENSE.txt" t="Include" />
           </e>
         </e>
-        <e p="HistoryStack" t="Include">
-          <e p="AppendHistory.compute" t="Include" />
-          <e p="AppendHistoryInstancer.cs" t="Include" />
-          <e p="InstancerHistory.hlsl" t="Include" />
-          <e p="TexInstancerHIstory.shader" t="Include" />
-        </e>
-        <e p="MNCA" t="Include">
-          <e p="MNCA.cs" t="Include" />
-          <e p="MNCA2.cs" t="Include" />
-          <e p="MNCA2Compute.compute" t="Include" />
-          <e p="MNCACompute.compute" t="Include" />
-        </e>
-        <e p="TexInstancer" t="Include">
-          <e p="Instancer.hlsl" t="Include" />
-          <e p="TexInstancer.cs" t="Include" />
-          <e p="TexInstancer.shader" t="Include" />
-          <e p="turntable.cs" t="Include" />
-        </e>
-        <e p="TexInstancer 3D" t="Include">
-          <e p="CCA3D.cs" t="Include" />
-          <e p="CCA3DCompute.compute" t="Include" />
-          <e p="Instancer3D.hlsl" t="Include" />
-          <e p="TexInstancer3D.cs" t="Include" />
-          <e p="TexInstancer3D.shader" t="Include" />
+        <e p="Workshop" t="Include">
+          <e p="CCA" t="Include">
+            <e p="CCA2D.cs" t="Include" />
+            <e p="CCACompute.compute" t="Include" />
+          </e>
+          <e p="CCA RGB" t="Include">
+            <e p="CCARGB.cs" t="Include" />
+            <e p="CCARGBCompute.compute" t="Include" />
+          </e>
+          <e p="CCA Simple" t="Include">
+            <e p="CCAComputeSimple.compute" t="Include" />
+            <e p="CCASimple.cs" t="Include" />
+          </e>
+          <e p="HistoryStack" t="Include">
+            <e p="AppendHistory.compute" t="Include" />
+            <e p="AppendHistoryInstancer.cs" t="Include" />
+            <e p="InstancerHistory.hlsl" t="Include" />
+            <e p="TexInstancerHIstory.shader" t="Include" />
+          </e>
+          <e p="MNCA" t="Include">
+            <e p="MNCA.cs" t="Include" />
+            <e p="MNCA2.cs" t="Include" />
+            <e p="MNCA2Compute.compute" t="Include" />
+            <e p="MNCACompute.compute" t="Include" />
+          </e>
+          <e p="TexInstancer" t="Include">
+            <e p="Instancer.hlsl" t="Include" />
+            <e p="TexInstancer.cs" t="Include" />
+            <e p="TexInstancer.shader" t="Include" />
+            <e p="turntable.cs" t="Include" />
+          </e>
+          <e p="TexInstancer 3D" t="Include">
+            <e p="CCA3D.cs" t="Include" />
+            <e p="CCA3DCompute.compute" t="Include" />
+            <e p="Instancer3D.hlsl" t="Include" />
+            <e p="TexInstancer3D.cs" t="Include" />
+            <e p="TexInstancer3D.shader" t="Include" />
+          </e>
+          <e p="TrailAgents" t="Include">
+            <e p="TrailAgents.cs" t="Include" />
+            <e p="TrailAgentsCompute.compute" t="Include" />
+          </e>
         </e>
       </e>
       <e p="EasyButtons.csproj" t="IncludeRecursive" />

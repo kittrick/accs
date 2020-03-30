@@ -61,7 +61,6 @@
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ButtonsExample\ButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\CustomEditorButtonsExample\CustomEditorButtonsExample.cs" />
      <Compile Include="Assets\External Libraries\EasyButtons\Assets\EasyButtons\Samples\ScriptableObjectExample\ScriptableObjectExample.cs" />
-     <Compile Include="Assets\Workshop\Agents\Agents.cs" />
      <Compile Include="Assets\Workshop\CCA RGB\CCARGB.cs" />
      <Compile Include="Assets\Workshop\CCA Simple\CCASimple.cs" />
      <Compile Include="Assets\Workshop\CCA\CCA2D.cs" />
@@ -72,6 +71,7 @@
      <Compile Include="Assets\Workshop\TexInstancer 3D\TexInstancer3D.cs" />
      <Compile Include="Assets\Workshop\TexInstancer\TexInstancer.cs" />
      <Compile Include="Assets\Workshop\TexInstancer\turntable.cs" />
+     <Compile Include="Assets\Workshop\TrailAgents\TrailAgents.cs" />
      <None Include="Assets\Workshop\TexInstancer 3D\TexInstancer3D.shader" />
      <None Include="Assets\Workshop\TexInstancer\TexInstancer.shader" />
      <None Include="Assets\Workshop\TexInstancer\Instancer.hlsl" />
@@ -82,7 +82,7 @@
      <None Include="Assets\Workshop\TexInstancer 3D\CCA3DCompute.compute" />
      <None Include="Assets\Workshop\TexInstancer 3D\Instancer3D.hlsl" />
      <None Include="Assets\Workshop\HistoryStack\TexInstancerHIstory.shader" />
-     <None Include="Assets\Workshop\Agents\AgentsCompute.compute" />
+     <None Include="Assets\Workshop\TrailAgents\TrailAgentsCompute.compute" />
      <None Include="Assets\Workshop\CCA Simple\CCAComputeSimple.compute" />
      <None Include="Assets\Workshop\CCA\CCACompute.compute" />
      <None Include="Assets\Workshop\HistoryStack\InstancerHistory.hlsl" />

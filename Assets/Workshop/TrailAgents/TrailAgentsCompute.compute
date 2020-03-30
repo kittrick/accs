@@ -1,0 +1,70 @@
+﻿#pragma enable_d3d11_debug_symbols
+
+// Reset
+#pragma kernel ResetTextureKernel
+#pragma kernel ResetAgentsKernel
+
+// Render
+#pragma kernel AgentsDebugKernel
+
+
+Texture2D<float4> readTex;
+SamplerState sampler_readTex;
+
+RWTexture2D<float4> writeTex;
+RWTexture2D<float4> outTex;
+
+struct Agent
+{
+    float2 position;
+    float2 direction;
+};
+
+RWStructuredBuffer<Agent> agentsBuffer;
+
+uint rez;
+uint stepn;
+uint time;
+
+// ------------------------------------------------------------
+// UTIL
+// ------------------------------------------------------------
+
+// via "The Art of Code" on YouTube
+float2 Random(float2 p) {
+    float3 a = frac(p.xyx * float3(123.34, 234.34, 345.65));
+    a += dot(a, a + 34.45);
+    return frac(float2(a.x * a.y, a.y * a.z));
+}
+
+// ------------------------------------------------------------
+// RESET
+// ------------------------------------------------------------
+
+[numthreads(1, 1, 1)]
+void ResetTextureKernel(uint3 id : SV_DispatchThreadID)
+{
+    writeTex[id.xy] = 0;
+}
+
+[numthreads(1, 1, 1)]
+void ResetAgentsKernel(uint3 id : SV_DispatchThreadID)
+{
+    Agent a;
+    
+    a.position = Random(id.x * .0001 + time * .001) * rez;
+    a.direction = 0;
+    
+    agentsBuffer[id.x] = a;
+}
+
+// ------------------------------------------------------------
+// RENDER
+// ------------------------------------------------------------
+
+[numthreads(1,1,1)]
+void AgentsDebugKernel(uint3 id : SV_DispatchThreadID)
+{
+    Agent a = agentsBuffer[id.x];
+    outTex[round(a.position)] += float4(0, .1, 0, 0);
+}
