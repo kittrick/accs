@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Workshop/TrailAgents/TrailAgents.unity
+- path: Assets/Workshop/HistoryStack/HistoryStackLightprobes.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

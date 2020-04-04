@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 663738711}
   - component: {fileID: 663738710}
   - component: {fileID: 663738708}
+  - component: {fileID: 663738709}
   m_Layer: 0
   m_Name: TextureGen
   m_TagString: Untagged
@@ -152,12 +153,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fefd827caac14454b58208af55c106c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentsCount: 10
-  rez: 512
+  agentsCount: 1000000
+  trailDecayFactor: 0.392
+  diffusionRange: 1
+  sensorAngle: 0
+  brushSize: 10
+  interactivePlane: {fileID: 663738707}
+  rez: 1080
   stepsPerFrame: 1
   stepMod: 1
   cs: {fileID: 7200000, guid: 692573ad61da54ec8b96dfb882632e80, type: 3}
   outMat: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
+--- !u!64 &663738709
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663738707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &663738710
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -233,7 +253,7 @@ GameObject:
   - component: {fileID: 854937469}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

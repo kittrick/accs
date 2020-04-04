@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using EasyButtons;
 using UnityEngine;
 
-[ExecuteAlways]
 public class TrailAgents : MonoBehaviour
 {
     // ------------------------------
     // Primary CCA Parameters
     // ------------------------------
     [Header("Trail Agents Settings")]
-    [Range(1, 50000)]
+    [Range(64, 1000000)]
     public int agentsCount = 1;
 
     private ComputeBuffer agentsBuffer;
+
+    [Range(0, 1)]
+    public float trailDecayFactor = .9f;
+    [Range(1,10)]
+    public int diffusionRange = 1;
+    [Range(0, 1)]
+    public float sensorAngle = 0;
+
+    [Header("Mouse Input")]
+    [Range(0, 100)]
+    public int brushSize = 10;
+    public GameObject interactivePlane;
+    protected Vector2 hitXY;
 
     // ------------------------------
     // Global Parameters
@@ -35,9 +47,13 @@ public class TrailAgents : MonoBehaviour
     private RenderTexture outTex;
     private RenderTexture readTex;
     private RenderTexture writeTex;
+    private RenderTexture debugTex;
 
     private int agentsDebugKernel;
     private int moveAgentsKernel;
+    private int writeTrailsKernel;
+    private int renderKernel;
+    private int diffuseTextureKernel;
     
     protected List<ComputeBuffer> buffers;
     protected List<RenderTexture> textures;
@@ -54,10 +70,14 @@ public class TrailAgents : MonoBehaviour
         Release();
         agentsDebugKernel = cs.FindKernel("AgentsDebugKernel");
         moveAgentsKernel = cs.FindKernel("MoveAgentsKernel");
-        
+        renderKernel = cs.FindKernel("RenderKernel");
+        writeTrailsKernel = cs.FindKernel("WriteTrailsKernel");
+        diffuseTextureKernel = cs.FindKernel("DiffuseTextureKernel");
+
         readTex = CreateTexture(rez, FilterMode.Point);
         writeTex = CreateTexture(rez, FilterMode.Point);
         outTex = CreateTexture(rez, FilterMode.Point);
+        debugTex = CreateTexture(rez, FilterMode.Point);
         
         agentsBuffer = new ComputeBuffer(agentsCount, sizeof(float) * 4);
         buffers.Add(agentsBuffer);
@@ -82,7 +102,7 @@ public class TrailAgents : MonoBehaviour
 
         kernel = cs.FindKernel("ResetAgentsKernel");
         cs.SetBuffer(kernel, "agentsBuffer", agentsBuffer);
-        cs.Dispatch(kernel, agentsCount, 1,1);
+        cs.Dispatch(kernel, agentsCount / 64, 1,1);
     }
     
     // ------------------------------
@@ -113,23 +133,88 @@ public class TrailAgents : MonoBehaviour
     [Button]
     public void Step()
     {
+        HandleInput();
+        
         stepn += 1;
+        cs.SetInt("time", Time.frameCount);
+        cs.SetInt("stepn", stepn);
+        cs.SetInt("brushSize", brushSize);
+        cs.SetVector("hitXY", hitXY);
+        
         GPUMoveAgentsKernel();
 
+        if (stepn % 2 == 1)
+        {
+            GPUDiffuseTextureKernel();
+            GPUWriteTrailsKernel();
+            SwapTex();
+        }
+
         Render();
+    }
+
+    void HandleInput()
+    {
+        if (!Input.GetMouseButton(0))
+        {
+            hitXY.x = hitXY.y = 0;
+            return;
+        }
+
+        RaycastHit hit;
+        if (!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
+        {
+            return;
+        }
+
+        if (hit.transform != interactivePlane.transform)
+        {
+            return;
+        }
+
+        hitXY = hit.textureCoord * rez;
+    }
+
+    private void GPUDiffuseTextureKernel()
+    {
+        cs.SetTexture(diffuseTextureKernel, "readTex", readTex);
+        cs.SetTexture(diffuseTextureKernel, "writeTex", writeTex);
+        cs.SetFloat("trailDecayFactor", trailDecayFactor);
+        cs.SetInt("diffusionRange", diffusionRange);
+        cs.SetFloat("sensorAngle", sensorAngle);
+        
+        cs.Dispatch(diffuseTextureKernel, rez, rez, 1);
     }
 
     private void GPUMoveAgentsKernel()
     {
         cs.SetBuffer(moveAgentsKernel, "agentsBuffer", agentsBuffer);
         cs.SetTexture(moveAgentsKernel, "readTex", readTex);
+        cs.SetTexture(moveAgentsKernel, "debugTex", debugTex);
         
-        cs.Dispatch(moveAgentsKernel, agentsCount, 1, 1);
+        cs.Dispatch(moveAgentsKernel, agentsCount / 64, 1, 1);
+    }
+    
+    private void GPUWriteTrailsKernel()
+    {
+        cs.SetBuffer(writeTrailsKernel, "agentsBuffer", agentsBuffer);
+        
+        cs.SetTexture(writeTrailsKernel, "writeTex", writeTex);
+        
+        cs.Dispatch(writeTrailsKernel, agentsCount / 64, 1, 1);
+    }
+
+    private void SwapTex()
+    {
+        RenderTexture tmp = readTex;
+        readTex = writeTex;
+        writeTex = tmp;
     }
 
     public void Render()
     {
-        GPUAgentsDebugKernel();
+        GPURenderKernel();
+        //GPUAgentsDebugKernel();
         
         outMat.SetTexture("_UnlitColorMap", outTex);
         if (!Application.isPlaying)
@@ -137,13 +222,22 @@ public class TrailAgents : MonoBehaviour
             UnityEditor.SceneView.RepaintAll();
         }
     }
+    
+    private void GPURenderKernel()
+    {
+       cs.SetTexture(renderKernel, "readTex", readTex);
+       cs.SetTexture(renderKernel, "outTex", outTex);
+       cs.SetTexture(renderKernel, "debugTex", debugTex);
+        
+       cs.Dispatch(renderKernel, rez, rez, 1);
+    }
 
     private void GPUAgentsDebugKernel()
     {
         cs.SetBuffer(agentsDebugKernel, "agentsBuffer", agentsBuffer);
         cs.SetTexture(agentsDebugKernel, "outTex", outTex);
         
-        cs.Dispatch(agentsDebugKernel, agentsCount, 1, 1);
+        cs.Dispatch(agentsDebugKernel, agentsCount / 64, 1, 1);
     }
 
     // ------------------------------
