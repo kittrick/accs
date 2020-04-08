@@ -51,6 +51,10 @@
             <e p="CCAComputeSimple.compute" t="Include" />
             <e p="CCASimple.cs" t="Include" />
           </e>
+          <e p="CustomAgents" t="Include">
+            <e p="CustomAgents.cs" t="Include" />
+            <e p="CustomAgentsCompute.compute" t="Include" />
+          </e>
           <e p="HistoryStack" t="Include">
             <e p="AppendHistory.compute" t="Include" />
             <e p="AppendHistoryInstancer.cs" t="Include" />
@@ -62,6 +66,10 @@
             <e p="MNCA2.cs" t="Include" />
             <e p="MNCA2Compute.compute" t="Include" />
             <e p="MNCACompute.compute" t="Include" />
+          </e>
+          <e p="Physarum" t="Include">
+            <e p="Physarum.cs" t="Include" />
+            <e p="PhysarumCompute.compute" t="Include" />
           </e>
           <e p="TexInstancer" t="Include">
             <e p="Instancer.hlsl" t="Include" />

@@ -64,9 +64,11 @@
      <Compile Include="Assets\Workshop\CCA RGB\CCARGB.cs" />
      <Compile Include="Assets\Workshop\CCA Simple\CCASimple.cs" />
      <Compile Include="Assets\Workshop\CCA\CCA2D.cs" />
+     <Compile Include="Assets\Workshop\CustomAgents\CustomAgents.cs" />
      <Compile Include="Assets\Workshop\HistoryStack\AppendHistoryInstancer.cs" />
      <Compile Include="Assets\Workshop\MNCA\MNCA.cs" />
      <Compile Include="Assets\Workshop\MNCA\MNCA2.cs" />
+     <Compile Include="Assets\Workshop\Physarum\Physarum.cs" />
      <Compile Include="Assets\Workshop\TexInstancer 3D\CCA3D.cs" />
      <Compile Include="Assets\Workshop\TexInstancer 3D\TexInstancer3D.cs" />
      <Compile Include="Assets\Workshop\TexInstancer\TexInstancer.cs" />
@@ -82,9 +84,11 @@
      <None Include="Assets\Workshop\TexInstancer 3D\CCA3DCompute.compute" />
      <None Include="Assets\Workshop\TexInstancer 3D\Instancer3D.hlsl" />
      <None Include="Assets\Workshop\HistoryStack\TexInstancerHIstory.shader" />
+     <None Include="Assets\Workshop\CustomAgents\CustomAgentsCompute.compute" />
      <None Include="Assets\Workshop\TrailAgents\TrailAgentsCompute.compute" />
      <None Include="Assets\Workshop\CCA Simple\CCAComputeSimple.compute" />
      <None Include="Assets\Workshop\CCA\CCACompute.compute" />
+     <None Include="Assets\Workshop\Physarum\PhysarumCompute.compute" />
      <None Include="Assets\Workshop\HistoryStack\InstancerHistory.hlsl" />
      <None Include="Assets\Workshop\CCA RGB\CCARGBCompute.compute" />
  <Reference Include="Unity.Timeline.Editor">

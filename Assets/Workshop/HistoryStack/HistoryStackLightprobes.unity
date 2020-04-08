@@ -901,6 +901,7 @@ GameObject:
   - component: {fileID: 663738710}
   - component: {fileID: 663738708}
   - component: {fileID: 663738709}
+  - component: {fileID: 663738713}
   m_Layer: 0
   m_Name: TextureGen
   m_TagString: Untagged
@@ -949,17 +950,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663738707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fefd827caac14454b58208af55c106c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentsCount: 98526
+  agentsCount: 43539
   trailDecayFactor: 0.435
   diffusionRange: 3
   sensorAngle: 0
   brushSize: 10
-  interactivePlane: {fileID: 0}
+  interactivePlane: {fileID: 1811880870}
   rez: 128
   stepsPerFrame: 8
   stepMod: 1
@@ -1026,6 +1027,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &663738713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663738707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e1896439aad40298eb26b13b3b8aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 128
+  height: 128
+  cs: {fileID: 7200000, guid: 39ee5d287687c47b2bfe01c23fe80f2a, type: 3}
+  particleCount: 64
+  minMass: 1
+  maxMass: 10
+  drag: 0
+  interactivePlane: {fileID: 1845144808}
+  repulsionStrength: 3000
+  decayFactor: 0.414
+  noiseStrength: 5
+  outMat: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
 --- !u!1 &710537240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1159,7 @@ GameObject:
   - component: {fileID: 854937469}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1335,7 +1360,7 @@ Transform:
   m_GameObject: {fileID: 1147129592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.05, z: 0.07}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1356,7 +1381,7 @@ MonoBehaviour:
   mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: cabd2b12d80fb43dcb12afb418c28a53, type: 2}
   inputMaterial: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
-  size: 0.5
+  size: 0.33
   spacing: 0.5
   height: 512
 --- !u!114 &1147129595

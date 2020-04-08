@@ -10,7 +10,7 @@ public class TrailAgents : MonoBehaviour
     // ------------------------------
     [Header("Trail Agents Settings")]
     [Range(64, 1000000)]
-    public int agentsCount = 1;
+    public int agentsCount = 64;
 
     private ComputeBuffer agentsBuffer;
 
@@ -68,7 +68,6 @@ public class TrailAgents : MonoBehaviour
     private void Reset()
     {
         Release();
-        agentsDebugKernel = cs.FindKernel("AgentsDebugKernel");
         moveAgentsKernel = cs.FindKernel("MoveAgentsKernel");
         renderKernel = cs.FindKernel("RenderKernel");
         writeTrailsKernel = cs.FindKernel("WriteTrailsKernel");
