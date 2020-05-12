@@ -22,6 +22,7 @@ float maxMass;
 float2 mousePosition;
 float repulsionStrength;
 float decayFactor;
+int diffuseRange;
 float noiseStrength;
 
 // ------------------------------------------------------------
@@ -202,12 +203,35 @@ void StepKernel(uint3 id: SV_DispatchThreadID)
         }
     }
 }
+
+// ------------------------------------------------------------
+// Diffuse
+// ------------------------------------------------------------
+void Diffuse(uint3 id)
+{
+    float4 avg = float4(0,0,0,1);
+    float count = 0;
+    for (int x = -diffuseRange; x <= diffuseRange; x++){
+        for (int y = -diffuseRange; y <= diffuseRange; y++){
+            // Count the number of cells that is brighter than half brightness
+            //float2 pointSample = float2(id.x, id.y);
+            float2 pointSample = float2(
+                (id.x + x) / (float)width,
+                (id.y + y) / (float)height);
+            avg += readTex.SampleLevel(sampler_readTex, pointSample, 0);
+            count++;
+      }
+    }
+    avg /= count;
+    writeTex[id.xy] = avg;
+}
 // ------------------------------------------------------------
 // Clear the Stage
 // ------------------------------------------------------------
 [numthreads(32, 32, 1)]
 void ClearKernel(uint3 id: SV_DispatchThreadID)
 {
+    Diffuse(id);
     writeTex[id.xy] *= float4(decayFactor, decayFactor, decayFactor, 1);
 }
 

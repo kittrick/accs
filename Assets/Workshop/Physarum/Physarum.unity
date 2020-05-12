@@ -205,13 +205,14 @@ MonoBehaviour:
   width: 2056
   height: 2056
   cs: {fileID: 7200000, guid: 8d129966093484df29336ebb0f02b9ef, type: 3}
-  particleCount: 365467
+  particleCount: 98526
   minMass: 1
   maxMass: 10
   drag: 0.1
   interactivePlane: {fileID: 663738707}
   repulsionStrength: 3000
   decayFactor: 0.912
+  diffuseRange: 1
   noiseStrength: 10
   outMat: {fileID: 2100000, guid: 364954a917f6449368e2e45ec97e4634, type: 2}
 --- !u!64 &663738709

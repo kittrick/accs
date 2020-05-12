@@ -1,10 +1,56 @@
 Base path: '/Applications/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/2019.3.4f1/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileSnippet
-  api=14 type=0 insize=7868 outsize=8379 kw=LIGHTMAP_ON DIRLIGHTMAP_COMBINED DECALS_3RT DEBUG_DISPLAY pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=1 insize=8936 outsize=396367 kw=LIGHTMAP_ON DIRLIGHTMAP_COMBINED DECALS_3RT SHADOW_MEDIUM USE_CLUSTERED_LIGHTLIST DEBUG_DISPLAY _NORMALMAP_TANGENT_SPACE _DISABLE_DECALS _DISABLE_SSR pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=1862 outsize=1925 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(220): undeclared identifier 'diffuse'
+  api=14 insize=6970 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(220): undeclared identifier 'diffuse'
+  api=14 insize=6876 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(221): undeclared identifier 'diffuse'
+  api=14 insize=7252 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(221): undeclared identifier 'diffuse'
+  api=14 insize=7261 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(221): undeclared identifier 'diffuse'
+  api=14 insize=7259 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(223): undeclared identifier 'rez'
+  api=14 insize=7261 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(227): undeclared identifier 'rez'
+  api=14 insize=7551 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=7256 outsize=11431 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7554 outsize=1603 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1895 outsize=1371 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7531 outsize=3028 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7530 outsize=1603 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2657 outsize=2856 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7543 outsize=3028 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1931 outsize=1429 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7543 outsize=3028 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1931 outsize=1429 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PhysarumCompute.compute(226): redefinition of 'pointSample'
+  api=14 insize=7606 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=7612 outsize=1603 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7596 outsize=3028 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7579 outsize=1603 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=7596 outsize=2449 ok=1
 
 Quitting shader compiler process

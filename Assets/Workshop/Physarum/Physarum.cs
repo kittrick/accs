@@ -30,6 +30,8 @@ public class Physarum : MonoBehaviour
     public float repulsionStrength = 3000f;
     [Range(0,1)]
     public float decayFactor = 0.99f;
+    [Range(1,10)]
+    public int diffuseRange = 3;
     public float noiseStrength = 5f;
     private Vector2 mousePosition;
     private Camera cam;
@@ -133,12 +135,14 @@ public class Physarum : MonoBehaviour
         
         cs.SetFloat("time", Time.time);
         cs.SetFloat("drag", drag);
+        cs.SetInt("diffuseRange", diffuseRange);
         cs.SetVector("mousePosition", mousePosition);
         cs.SetFloat("repulsionStrength", repulsionStrength);
         cs.SetFloat("noiseStrength", noiseStrength);
         GPUClearKernel();
         GPUStepKernel();
         Render();
+        SwapTex();
     }
     
     // ------------------------------------------------------------
@@ -216,6 +220,7 @@ public class Physarum : MonoBehaviour
     // ------------------------------------------------------------
     private void GPURenderKernel()
     {
+        cs.SetInt("diffuseRange", diffuseRange);
         cs.SetTexture(RenderKernel, "readTex", readTex);
         cs.SetTexture(RenderKernel, "writeTex", writeTex);
         cs.SetTexture(RenderKernel, "outTex", outTex);
