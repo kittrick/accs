@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,5 +57,11 @@ public class TexInstancer : MonoBehaviour
             Graphics.DrawMeshInstancedIndirect(mesh, 0, instanceMaterial, bounds, argBuffer);
         
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        argBuffer.Release();
+        argBuffer.Dispose();
     }
 }

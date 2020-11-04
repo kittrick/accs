@@ -68,8 +68,8 @@
             <e p="MNCACompute.compute" t="Include" />
           </e>
           <e p="Physarum" t="Include">
+            <e p="Physarum.compute" t="Include" />
             <e p="Physarum.cs" t="Include" />
-            <e p="PhysarumCompute.compute" t="Include" />
           </e>
           <e p="TexInstancer" t="Include">
             <e p="Instancer.hlsl" t="Include" />
@@ -96,7 +96,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_accs.1680053744.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_accs.1680053744.00" t="ExcludeRecursive" />
   </component>
 </project>

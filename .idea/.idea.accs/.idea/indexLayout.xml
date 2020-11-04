@@ -7,15 +7,22 @@
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
       <Path>Library/PackageCache/com.unity.ide.vscode@1.1.4</Path>
+      <Path>Library/PackageCache/com.unity.ide.vscode@1.2.2</Path>
       <Path>Library/PackageCache/com.unity.recorder@2.1.0-preview.1</Path>
       <Path>Library/PackageCache/com.unity.render-pipelines.core@7.1.8</Path>
+      <Path>Library/PackageCache/com.unity.render-pipelines.core@7.3.1</Path>
       <Path>Library/PackageCache/com.unity.render-pipelines.high-definition-config@7.1.8</Path>
+      <Path>Library/PackageCache/com.unity.render-pipelines.high-definition-config@7.3.1</Path>
       <Path>Library/PackageCache/com.unity.render-pipelines.high-definition@7.1.8</Path>
+      <Path>Library/PackageCache/com.unity.render-pipelines.high-definition@7.3.1</Path>
       <Path>Library/PackageCache/com.unity.shadergraph@7.1.8</Path>
+      <Path>Library/PackageCache/com.unity.shadergraph@7.3.1</Path>
       <Path>Library/PackageCache/com.unity.test-framework@1.1.11</Path>
+      <Path>Library/PackageCache/com.unity.test-framework@1.1.18</Path>
       <Path>Library/PackageCache/com.unity.textmeshpro@2.0.1</Path>
       <Path>Library/PackageCache/com.unity.timeline@1.2.12</Path>
       <Path>Library/PackageCache/com.unity.visualeffectgraph@7.1.8</Path>
+      <Path>Library/PackageCache/com.unity.visualeffectgraph@7.3.1</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
     </explicitIncludes>
@@ -26,6 +33,7 @@
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Recordings</Path>
+      <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>

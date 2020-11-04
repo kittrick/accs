@@ -1,266 +1,267 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using EasyButtons;
 using UnityEngine;
 
 public class Physarum : MonoBehaviour
 {
-    [Header("Texture Size")]
-    [Range(32, 2056)]
-    public int width = 32;
-    [Range(32, 2056)]
-    public int height = 32;
+    // ------------------------------
+    // Primary CCA Parameters
+    // ------------------------------
+    [Header("Trail Agents Settings")]
+    [Range(64, 1000000)]
+    public int agentsCount = 64;
 
-    [Header("Compute Shader")]
-    public ComputeShader cs;
-    private ComputeBuffer particleBuffer;
+    private ComputeBuffer agentsBuffer;
 
-    [Header("Particle Info")]
-    [Range(64,1000000)]
-    public int particleCount = 64;
-    public float minMass = 1f;
-    public float maxMass = 10f;
-
-    [Header("Environment Info")]
-    public float drag;
-
-    // Mouse Info
-    public GameObject interactivePlane;
-    public float repulsionStrength = 3000f;
-    [Range(0,1)]
-    public float decayFactor = 0.99f;
+    [Range(0, 1)]
+    public float trailDecayFactor = .9f;
     [Range(1,10)]
-    public int diffuseRange = 3;
-    public float noiseStrength = 5f;
-    private Vector2 mousePosition;
-    private Camera cam;
-    
-    [Header("Output Material")]
+    public int diffusionRange = 1;
+    [Range(1, 360)]
+    public int sensorCount = 3;
+    [Range(0, 1080)]
+    public float sensorRange = 1;
+    [Range(0, 360)]
+    public float sensorAngle = 45;
+
+    [Header("Physics")]
+    [Range(0, 100)]
+    public float mass = 1;
+    [Range(0, 100)]
+    public float drag = 0;
+    [Range(0, 100)]
+    public float speed = 1;
+    [Range(0, 100)]
+    public float sensorForce = 1;
+
+    [Header("Mouse Input")]
+    [Range(0, 100)]
+    public int brushSize = 10;
+    public GameObject interactivePlane;
+    protected Vector2 hitXY;
+
+    // ------------------------------
+    // Global Parameters
+    // ------------------------------
+    [Header("Setup")]
+    public Camera cam;
+
+    [Range(8, 2048)]
+    public int rez = 512;
+
+    [Range(0, 50)]
+    public int stepsPerFrame = 1;
+
+    [Range(1, 50)]
+    public int stepMod = 1;
+
+    public ComputeShader cs;
     public Material outMat;
+    public Material instanceMat;
+    
+    private RenderTexture outTex;
     private RenderTexture readTex;
     private RenderTexture writeTex;
     private RenderTexture debugTex;
-    private RenderTexture outTex;
+
+    private int agentsDebugKernel;
+    private int moveAgentsKernel;
+    private int writeTrailsKernel;
+    private int renderKernel;
+    private int diffuseTextureKernel;
     
-    // Kernels
-    private int StepKernel, ClearKernel, RenderKernel;
-    
-    // Buffers and Textures
     protected List<ComputeBuffer> buffers;
     protected List<RenderTexture> textures;
+
+    protected int stepn = -1;
+
     
-    // Particle Struct
-    struct Particle
-    {
-        public Vector2 position;
-        public Vector2 velocity;
-        public Vector2 acceleration;
-        public Vector4 color;
-        public float particleMass;
-    }
-    
-    // Runs at start
-    private void Start()
-    {
-        if (cam == null)
-        {
-            cam = Camera.main;
-        }
-        // Setup everything for the compute shader
-        Reset();
-    }
-    
-    // Clean up and run
+    // ------------------------------
+    // Reset
+    // ------------------------------
+    [Button]
     private void Reset()
     {
         Release();
+        moveAgentsKernel = cs.FindKernel("MoveAgentsKernel");
+        renderKernel = cs.FindKernel("RenderKernel");
+        writeTrailsKernel = cs.FindKernel("WriteTrailsKernel");
+        diffuseTextureKernel = cs.FindKernel("DiffuseTextureKernel");
+
+        readTex = CreateTexture(rez, FilterMode.Point);
+        writeTex = CreateTexture(rez, FilterMode.Point);
+        outTex = CreateTexture(rez, FilterMode.Point);
+        debugTex = CreateTexture(rez, FilterMode.Point);
         
-        StepKernel = cs.FindKernel("StepKernel");
-        ClearKernel = cs.FindKernel("ClearKernel");
-        RenderKernel = cs.FindKernel("RenderKernel");
-
-        readTex = CreateTexture(width, height);
-        writeTex = CreateTexture(width, height);
-        outTex = CreateTexture(width, height);
-        debugTex = CreateTexture(width, height);
-
-        particleBuffer = new ComputeBuffer(particleCount, sizeof(float) * 11);
-        buffers.Add(particleBuffer);
+        agentsBuffer = new ComputeBuffer(agentsCount, sizeof(float) * 4);
+        buffers.Add(agentsBuffer);
         
         GPUResetKernel();
         Render();
     }
     
-    // Reset
     private void GPUResetKernel()
     {
         int kernel;
-
-        StepKernel = cs.FindKernel("StepKernel");
-        RenderKernel = cs.FindKernel("RenderKernel");
         
-        cs.SetInt("width", width);
-        cs.SetInt("height", height);
-        cs.SetFloat("time", Time.time);
-        cs.SetFloat("minMass", minMass);
-        cs.SetFloat("maxMass", maxMass);
-        cs.SetFloat("drag", drag);
+        cs.SetInt("rez", rez);
+        cs.SetInt("time", Time.frameCount);
 
         kernel = cs.FindKernel("ResetTextureKernel");
         cs.SetTexture(kernel, "writeTex", writeTex);
-        cs.Dispatch(kernel, width / 32, height / 32, 1);
+        cs.Dispatch(kernel, rez, rez, 1);
         
         cs.SetTexture(kernel, "writeTex", readTex);
-        cs.Dispatch(kernel, width / 32, height / 32, 1);
+        cs.Dispatch(kernel, rez, rez, 1);
 
-        kernel = cs.FindKernel("ResetParticlesKernel");
-        cs.SetBuffer(kernel, "particleBuffer", particleBuffer);
-        cs.Dispatch(kernel, particleCount / 64, 1,1);
-    }
-
-    // Runs every frame
-    private void Update()
-    {
-        // Run the step function
-        Step();
+        kernel = cs.FindKernel("ResetAgentsKernel");
+        cs.SetBuffer(kernel, "agentsBuffer", agentsBuffer);
+        cs.Dispatch(kernel, agentsCount / 64, 1,1);
     }
     
-    // ------------------------------------------------------------
-    // Main Animator Function
-    // ------------------------------------------------------------
-    private void Step()
+    // ------------------------------
+    // Start
+    // ------------------------------
+    private void Start()
+    {
+        Reset();    
+    }
+
+    // ------------------------------
+    // Update
+    // ------------------------------
+    private void Update()
+    {
+        if(Time.frameCount % stepMod == 0)
+        {
+            for (int i = 0; i < stepsPerFrame; i++)
+            {
+                Step();
+            }
+        }
+    }
+
+    // ------------------------------
+    // Step
+    // ------------------------------
+    [Button]
+    public void Step()
     {
         HandleInput();
         
-        cs.SetFloat("time", Time.time);
-        cs.SetFloat("drag", drag);
-        cs.SetInt("diffuseRange", diffuseRange);
-        cs.SetVector("mousePosition", mousePosition);
-        cs.SetFloat("repulsionStrength", repulsionStrength);
-        cs.SetFloat("noiseStrength", noiseStrength);
-        GPUClearKernel();
-        GPUStepKernel();
+        stepn += 1;
+        cs.SetInt("time", Time.frameCount);
+        cs.SetInt("stepn", stepn);
+        cs.SetInt("brushSize", brushSize);
+        cs.SetVector("hitXY", hitXY);
+        
+        GPUMoveAgentsKernel();
+
+        if (stepn % 2 == 1)
+        {
+            GPUDiffuseTextureKernel();
+            GPUWriteTrailsKernel();
+            SwapTex();
+        }
+
         Render();
-        SwapTex();
     }
-    
-    // ------------------------------------------------------------
-    // Send Mouse Coords
-    // ------------------------------------------------------------
+
     void HandleInput()
     {
+        
         if (!Input.GetMouseButton(0))
         {
-            mousePosition.x = mousePosition.y = 0;
+            hitXY.x = hitXY.y = 0;
             return;
         }
 
         RaycastHit hit;
-        if (!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
+        if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
         {
-            return;
-        }
-
-        if (hit.transform != interactivePlane.transform)
-        {
-            return;
-        }
-
-        mousePosition = hit.textureCoord * new Vector2(width, height);
-    }
-    
-    // ------------------------------------------------------------
-    // Actual Render to OutTex
-    // ------------------------------------------------------------
-    private void Render()
-    {
-        GPURenderKernel();
-        
-        // For Unlit
-        //outMat.SetTexture("_UnlitColorMap", outTex);
-        
-        // For Lit
-        outMat.SetTexture("_BaseColorMap", outTex);
-        outMat.SetTexture("_EmissiveColorMap", outTex);
-        if (!Application.isPlaying)
-        {
-            UnityEditor.SceneView.RepaintAll();
+            if (hit.transform != interactivePlane.transform)
+            {
+                return;
+            }
+            hitXY = hit.textureCoord * rez;
         }
     }
-    
-    // ------------------------------------------------------------
-    // Compute agent positions on GPU
-    // ------------------------------------------------------------
-    private void GPUStepKernel()
+
+    private void GPUDiffuseTextureKernel()
     {
-        cs.SetBuffer(StepKernel, "particleBuffer", particleBuffer);
-        cs.SetTexture(StepKernel, "writeTex", writeTex);
-        cs.SetTexture(StepKernel, "readTex", readTex);
-        cs.SetTexture(StepKernel, "debugTex", debugTex);
-        
-        cs.Dispatch(StepKernel, particleCount / 64, 1, 1);
-    }
-    
-    // ------------------------------------------------------------
-    // Clear the stage
-    // ------------------------------------------------------------
-    private void GPUClearKernel()
-    {
-        cs.SetFloat("decayFactor", decayFactor);
-        cs.SetTexture(ClearKernel, "writeTex", writeTex);
-        cs.SetTexture(ClearKernel, "readTex", readTex);
-        cs.SetTexture(ClearKernel, "debugTex", debugTex);
-        
-        cs.Dispatch(ClearKernel, width / 32, height /32, 1);
+        cs.SetTexture(diffuseTextureKernel, "readTex", readTex);
+        cs.SetTexture(diffuseTextureKernel, "writeTex", writeTex);
+        cs.SetFloat("trailDecayFactor", trailDecayFactor);
+        cs.SetInt("diffusionRange", diffusionRange);
+        cs.SetInt("sensorCount", sensorCount);
+        cs.SetFloat("sensorRange", sensorRange);
+        cs.SetFloat("sensorAngle", sensorAngle);
+        cs.SetFloat("mass", mass);
+        cs.SetFloat("drag", drag);
+        cs.SetFloat("speed", speed);
+        cs.SetFloat("sensorForce", sensorForce);
+        cs.Dispatch(diffuseTextureKernel, rez, rez, 1);
     }
 
-    // ------------------------------------------------------------
-    // Render texture on GPU
-    // ------------------------------------------------------------
-    private void GPURenderKernel()
+    private void GPUMoveAgentsKernel()
     {
-        cs.SetInt("diffuseRange", diffuseRange);
-        cs.SetTexture(RenderKernel, "readTex", readTex);
-        cs.SetTexture(RenderKernel, "writeTex", writeTex);
-        cs.SetTexture(RenderKernel, "outTex", outTex);
-        cs.SetTexture(RenderKernel, "debugTex", debugTex);
+        cs.SetBuffer(moveAgentsKernel, "agentsBuffer", agentsBuffer);
+        cs.SetTexture(moveAgentsKernel, "readTex", readTex);
+        cs.SetTexture(moveAgentsKernel, "debugTex", debugTex);
         
-        cs.Dispatch(RenderKernel, width / 32, height / 32, 1);
+        cs.Dispatch(moveAgentsKernel, agentsCount / 64, 1, 1);
     }
     
-    // ------------------------------------------------------------
-    // Helper Functions
-    // ------------------------------------------------------------
-
-    // Create new RenderTexture
-    protected RenderTexture CreateTexture(int width, int height)
+    private void GPUWriteTrailsKernel()
     {
-        RenderTexture texture = new RenderTexture(width, height, 1, RenderTextureFormat.ARGBFloat);
-
-        texture.name = "out";
-        texture.enableRandomWrite = true;
-        texture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
-        texture.volumeDepth = 1;
-        texture.filterMode = FilterMode.Point;
-        texture.wrapMode = TextureWrapMode.Repeat;
-        texture.autoGenerateMips = false;
-        texture.useMipMap = false;
-        texture.Create();
-        textures.Add(texture);
+        cs.SetBuffer(writeTrailsKernel, "agentsBuffer", agentsBuffer);
         
-        return texture;
+        cs.SetTexture(writeTrailsKernel, "writeTex", writeTex);
+        
+        cs.Dispatch(writeTrailsKernel, agentsCount / 64, 1, 1);
     }
-    
-    // Swap Textures
+
     private void SwapTex()
     {
         RenderTexture tmp = readTex;
         readTex = writeTex;
         writeTex = tmp;
     }
+
+    public void Render()
+    {
+        GPURenderKernel();
+        //GPUAgentsDebugKernel();
+        
+        outMat.SetTexture("_UnlitColorMap", outTex);
+        instanceMat.SetTexture("_EmissiveColorMap", outTex);
+        if (!Application.isPlaying)
+        {
+            UnityEditor.SceneView.RepaintAll();
+        }
+    }
     
-    // Release textures and buffers
+    private void GPURenderKernel()
+    {
+       cs.SetTexture(renderKernel, "readTex", readTex);
+       cs.SetTexture(renderKernel, "outTex", outTex);
+       cs.SetTexture(renderKernel, "debugTex", debugTex);
+       cs.SetVector("hitXY", hitXY);
+       cs.Dispatch(renderKernel, rez, rez, 1);
+    }
+
+    private void GPUAgentsDebugKernel()
+    {
+        cs.SetBuffer(agentsDebugKernel, "agentsBuffer", agentsBuffer);
+        cs.SetTexture(agentsDebugKernel, "outTex", outTex);
+        
+        cs.Dispatch(agentsDebugKernel, agentsCount / 64, 1, 1);
+    }
+
+    // ------------------------------
+    // Helper Functions
+    // ------------------------------
     public void Release()
     {
         if (buffers != null)
@@ -303,5 +304,23 @@ public class Physarum : MonoBehaviour
     private void OnDisable()
     {
         Release();
+    }
+
+    protected RenderTexture CreateTexture(int r, FilterMode filterMode)
+    {
+        RenderTexture texture = new RenderTexture(r, r, 1, RenderTextureFormat.ARGBFloat);
+
+        texture.name = "out";
+        texture.enableRandomWrite = true;
+        texture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
+        texture.volumeDepth = 1;
+        texture.filterMode = filterMode;
+        texture.wrapMode = TextureWrapMode.Repeat;
+        texture.autoGenerateMips = false;
+        texture.useMipMap = false;
+        texture.Create();
+        textures.Add(texture);
+        
+        return texture;
     }
 }
