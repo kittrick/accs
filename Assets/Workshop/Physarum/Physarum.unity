@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 663738710}
   - component: {fileID: 663738709}
   - component: {fileID: 663738713}
-  - component: {fileID: 663738708}
+  - component: {fileID: 663738714}
   m_Layer: 0
   m_Name: TextureGen
   m_TagString: Untagged
@@ -190,31 +190,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &663738708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663738707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dd969c5b0b5547fd96943b0df45a4a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 2056
-  height: 2056
-  cs: {fileID: 7200000, guid: 8d129966093484df29336ebb0f02b9ef, type: 3}
-  particleCount: 98526
-  minMass: 1
-  maxMass: 10
-  drag: 0.1
-  interactivePlane: {fileID: 663738707}
-  repulsionStrength: 3000
-  decayFactor: 0.912
-  diffuseRange: 1
-  noiseStrength: 10
-  outMat: {fileID: 2100000, guid: 364954a917f6449368e2e45ec97e4634, type: 2}
 --- !u!64 &663738709
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -225,7 +200,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -247,7 +222,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 364954a917f6449368e2e45ec97e4634, type: 2}
+  - {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -297,12 +272,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663738707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e164bf52758b34b71b437b3e77deced3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationAngle: {x: 0, y: 1, z: 0}
+--- !u!114 &663738714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663738707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57460b5b96f545de97a1f7ec355db44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentsCount: 100000
+  trailDecayFactor: 0.9
+  diffusionRange: 1
+  sensorCount: 3
+  sensorRange: 1
+  sensorAngle: 45
+  mass: 1
+  drag: 0
+  speed: 1
+  sensorForce: 1
+  brushSize: 10
+  interactivePlane: {fileID: 663738707}
+  cam: {fileID: 854937471}
+  rez: 512
+  stepsPerFrame: 1
+  stepMod: 1
+  cs: {fileID: 7200000, guid: 59405c9d19f1244058976baf9498cd17, type: 3}
+  outMat: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
+  instanceMat: {fileID: 2100000, guid: bed48c029c51b484c8c891a3e6dad9b9, type: 2}
 --- !u!1 &854937468
 GameObject:
   m_ObjectHideFlags: 0

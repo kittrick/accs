@@ -303,7 +303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96724825}
   m_LocalRotation: {x: 0.7095707, y: 0, z: 0, w: 0.7046343}
-  m_LocalPosition: {x: 0, y: 66.06, z: 0}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -517,7 +517,7 @@ MonoBehaviour:
   brushSize: 10
   interactivePlane: {fileID: 965793012}
   cam: {fileID: 96724828}
-  rez: 200
+  rez: 512
   stepsPerFrame: 1
   stepMod: 1
   cs: {fileID: 7200000, guid: 59405c9d19f1244058976baf9498cd17, type: 3}
@@ -611,7 +611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965793012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1000000, y: 1, z: 1000000}
   m_Children: []
   m_Father: {fileID: 0}
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af907776026a419189e5f026556aed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   instanceMaterial: {fileID: 2100000, guid: bed48c029c51b484c8c891a3e6dad9b9, type: 2}
   inputMaterial: {fileID: 2100000, guid: 4c1b4f0e21c4b42919074f2bde6b675e, type: 2}
   sizey: 1.9

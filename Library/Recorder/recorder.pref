@@ -37,12 +37,12 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 68
+  take: 71
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
-      m_Root: 0
-      m_Leaf: Recordings
+      m_Root: 5
+      m_Leaf: /Users/johmacal/Desktop
       m_ForceAssetFolder: 0
     m_FileName: <Scene>_<Date>_<Take>
   outputFormat: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
       m_OutputResolution:
         m_CustomWidth: 1024
         m_CustomHeight: 1024
-        imageHeight: 0
+        imageHeight: 1080
         maxSupportedHeight: 2160
         m_AspectRatio:
           m_CustomAspectX: 1
